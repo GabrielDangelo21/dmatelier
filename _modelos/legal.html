@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="{{lang}}" data-type="product">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{leg_titulo}}</title>
+<meta name="description" content="{{leg_desc}}">
+<meta name="site-kind" content="product">
+<meta name="theme-color" content="#f5ede1">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="{{r}}assets/css/site.css">
+<link rel="icon" href="{{r}}assets/logo/dm-monogramme.svg" type="image/svg+xml">
+<style>
+  .legal .wrap > * { max-width: 46rem; }
+  .legal h1 { font-size: var(--t-xl); margin-bottom: 1rem; }
+  .legal h2 { font-size: var(--t-l); margin: 3rem 0 1rem; scroll-margin-top: 1.5rem; }
+  .legal h3 { font-family: var(--sans); font-size: var(--t-m); margin: 1.6rem 0 .4rem; }
+  .legal p, .legal li { color: var(--charbon-doux); }
+  .legal p + p { margin-top: .8rem; }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">{{skip}}</a>
+<p class="apercu">{{leg_apercu}}</p>
+
+<header class="entete">
+  <div class="wrap">
+    <a class="marque" href="index.html" aria-label="{{marque_aria}}">
+      <img src="{{r}}assets/logo/dm-monogramme.svg" alt="" width="82" height="104">
+      <span><b>DM ATELIER</b><small>by Dayse Marques</small></span>
+    </a>
+    <nav class="nav" aria-label="{{nav_aria}}">
+      <a class="lien" href="index.html#collection">{{nav_colecao}}</a>
+      <a class="wa" href="https://wa.me/" data-wa-question>WhatsApp</a>
+      {{langues}}
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" class="legal">
+  <section>
+    <div class="wrap">
+      <h1>{{leg_h1}}</h1>
+
+      <h2 id="mentions">{{leg_mencoes}}</h2>
+      <p>{{lm_1}}</p>
+      <p>{{lm_2}}</p>
+      <p>{{lm_3}}</p>
+
+      <h2 id="conditions">{{leg_condicoes}}</h2>
+      <h3>{{c_pedido_h}}</h3>
+      <p>{{c_pedido}}</p>
+      <h3>{{c_preco_h}}</h3>
+      <p>{{c_preco}}</p>
+      <h3>{{c_fab_h}}</h3>
+      <p>{{c_fab}}</p>
+      <h3>{{c_retr_h}}</h3>
+      <p>{{c_retr1}}</p>
+      <p>{{c_retr2}}</p>
+      <h3>{{c_gar_h}}</h3>
+      <p>{{c_gar}}</p>
+      <h3>{{c_lit_h}}</h3>
+      <p>{{c_lit}}</p>
+
+      <h2 id="confidentialite">{{leg_privacidade}}</h2>
+      <p>{{p_1}}</p>
+      <p>{{p_2}}</p>
+      <p>{{p_3}}</p>
+      <p>{{p_4}}</p>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div>
+      <a class="marque" href="index.html" aria-label="{{marque_aria}}"><img src="{{r}}assets/logo/dm-monogramme.svg" alt="" width="82" height="104"><span><b>DM ATELIER</b><small>by Dayse Marques, Professional Collection</small></span></a>
+    </div>
+    <ul>
+      <li><a href="index.html#collection">{{nav_colecao}}</a></li>
+      <li><a href="https://wa.me/" data-wa-question>WhatsApp</a></li>
+    </ul>
+    <ul>
+      <li><a href="#mentions">{{leg_mencoes}}</a></li>
+      <li><a href="#conditions">{{leg_condicoes}}</a></li>
+      <li><a href="#confidentialite">{{leg_privacidade}}</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="{{r}}assets/js/site.js"></script>
+</body>
+</html>

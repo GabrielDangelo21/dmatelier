@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="{{lang}}" data-type="product">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{idx_titulo}}</title>
+<meta name="description" content="{{idx_desc}}">
+<link rel="preload" href="{{r}}assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="site-kind" content="product">
+<meta name="theme-color" content="#f5ede1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DM Atelier">
+<meta property="og:title" content="{{idx_titulo}}">
+<meta property="og:description" content="{{idx_desc}}">
+<meta name="twitter:card" content="summary">
+{{hreflang}}
+<link rel="stylesheet" href="{{r}}assets/css/site.css">
+<link rel="icon" href="{{r}}assets/logo/dm-monogramme.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#contenu">{{skip}}</a>
+<p class="apercu">{{apercu}}</p>
+
+<header class="entete">
+  <div class="wrap">
+    <a class="marque" href="index.html" aria-label="{{marque_aria}}">
+      <img src="{{r}}assets/logo/dm-monogramme.svg" alt="" width="82" height="104">
+      <span><b>DM ATELIER</b><small>by Dayse Marques</small></span>
+    </a>
+    <nav class="nav" aria-label="{{nav_aria}}">
+      <a class="lien" href="#collection">{{nav_colecao}}</a>
+      <a class="lien" href="#commander">{{nav_pedir}}</a>
+      <a class="lien" href="#questions">{{nav_perguntas}}</a>
+      <a class="wa" href="https://wa.me/" data-wa-question>WhatsApp</a>
+      {{langues}}
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>{{hero_h1}}</h1>
+        <p class="chapo">{{hero_chapo}}</p>
+        <div class="essai">
+          <label for="essai-nom">{{hero_essai}}</label>
+          <input class="champ" id="essai-nom" type="text" maxlength="22" placeholder="{{defaut}}" autocomplete="organization">
+        </div>
+        <div class="actions">
+          <a class="btn" id="vers-produit" href="organisateur.html">{{cta_personalizar}}</a>
+          <a class="btn clair" href="#collection">{{cta_colecao}}</a>
+        </div>
+      </div>
+
+      <figure class="scene" style="margin:0">
+        <svg class="barre" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="18.8" y1="-2" x2="2.4" y2="104" vector-effect="non-scaling-stroke"/></svg>
+        <div class="produit-3d">
+          <img src="{{r}}assets/img/organisateur-gradins.webp" width="691" height="485" alt="{{hero_alt}}">
+          <span class="gravure" data-gravure aria-hidden="true">{{defaut}}</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="collection">
+    <div class="wrap">
+      <div class="intro-section">
+        <h2>{{col_h2}}</h2>
+        <p>{{col_p}}</p>
+      </div>
+
+      <article class="vedette">
+        <img src="{{r}}assets/img/organisateur-modules.webp" width="727" height="305" alt="{{col_alt}}" loading="lazy">
+        <div>
+          <h3>{{produto_nome}}</h3>
+          <p class="prix">{{col_preco}}</p>
+          <ul>
+            <li>{{col_li1}}</li>
+            <li>{{col_li2}}</li>
+            <li>{{col_li3}}</li>
+          </ul>
+          <a class="btn" href="organisateur.html">{{cta_personalizar}}</a>
+        </div>
+      </article>
+
+      <div class="bientot">
+        <h3>{{breve_h3}}</h3>
+        <ul>
+          <li><span>{{breve_1}}</span><span>{{breve}}</span></li>
+          <li><span>{{breve_2}}</span><span>{{breve}}</span></li>
+          <li><span>{{breve_3}}</span><span>{{breve}}</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="etapes" id="commander">
+    <div class="wrap">
+      <div class="intro-section">
+        <h2>{{etapas_h2}}</h2>
+        <p>{{etapas_p}}</p>
+      </div>
+      <ol>
+        <li><h3>{{e1_h}}</h3><p>{{e1_p}}</p></li>
+        <li><h3>{{e2_h}}</h3><p>{{e2_p}}</p></li>
+        <li><h3>{{e3_h}}</h3><p>{{e3_p}}</p></li>
+        <li><h3>{{e4_h}}</h3><p>{{e4_p}}</p></li>
+      </ol>
+      <p class="message" aria-label="{{msg_aria}}">{{msg_exemplo}}<small>{{exemplo}}</small></p>
+    </div>
+  </section>
+
+  <section class="dayse">
+    <div class="wrap">
+      <div class="lattes" role="img" aria-label="{{dayse_aria}}">
+        <img src="{{r}}assets/logo/dm-monogramme-champagne.svg" alt="" width="82" height="104">
+      </div>
+      <div class="texte">
+        <h2 style="margin-bottom:1.4rem">{{dayse_h2}}</h2>
+        <p>{{dayse_p1}}</p>
+        <p>{{dayse_p2}}</p>
+        <p class="signature">{{dayse_assinatura}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="questions">
+    <div class="wrap">
+      <div class="intro-section"><h2>{{faq_h2}}</h2></div>
+      <details><summary>{{faq1_q}}</summary><p>{{faq1_r}}</p></details>
+      <details><summary>{{faq2_q}}</summary><p>{{faq2_r}}</p></details>
+      <details><summary>{{faq3_q}}</summary><p>{{faq3_r}}</p></details>
+      <details><summary>{{faq4_q}}</summary><p>{{faq4_r}}</p></details>
+      <details><summary>{{faq5_q}}</summary><p>{{faq5_r}}</p></details>
+      <div class="fin">
+        <a class="btn" href="organisateur.html">{{cta_personalizar}}</a>
+        <a class="btn clair" href="https://wa.me/" data-wa-question>{{cta_pergunta}}</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div>
+      <a class="marque" href="index.html" aria-label="{{marque_aria}}"><img src="{{r}}assets/logo/dm-monogramme.svg" alt="" width="82" height="104"><span><b>DM ATELIER</b><small>by Dayse Marques, Professional Collection</small></span></a>
+      <p style="margin-top:1rem">{{rodape_empresa}}<br>{{rodape_endereco}}</p>
+    </div>
+    <ul>
+      <li><a href="#collection">{{nav_colecao}}</a></li>
+      <li><a href="#commander">{{nav_pedir}}</a></li>
+      <li><a href="https://wa.me/" data-wa-question>WhatsApp</a></li>
+      <li><a href="https://www.instagram.com/daysemarquesbeauty/">Instagram</a></li>
+    </ul>
+    <ul>
+      <li><a href="legal.html#mentions">{{leg_mencoes}}</a></li>
+      <li><a href="legal.html#conditions">{{leg_condicoes}}</a></li>
+      <li><a href="legal.html#confidentialite">{{leg_privacidade}}</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="{{r}}assets/js/site.js"></script>
+</body>
+</html>
