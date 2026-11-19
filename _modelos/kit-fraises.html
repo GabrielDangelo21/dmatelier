@@ -63,6 +63,23 @@
         <p class="ttc">{{kit_ttc}}</p>
         <p class="resume">{{kit_resumo}}</p>
 
+        <div class="contenu-kit">
+          <h2>{{kc_titulo}}</h2>
+          <ul>
+            <li>{{kc_dedo}}</li>
+            <li>{{kc_unhas}}</li>
+            <li>{{kc_pontas}}
+              <ul>
+                <li>{{kc_p1}}</li><li>{{kc_p2}}</li><li>{{kc_p3}}</li>
+                <li>{{kc_p4}}</li><li>{{kc_p5}}</li><li>{{kc_p6}}</li>
+                <li>{{kc_suporte}}</li>
+              </ul>
+            </li>
+            <li>{{kc_limas}}</li>
+          </ul>
+          <p class="offert">{{kc_brinde}}</p>
+        </div>
+
         <fieldset>
           <label class="titre" for="gravure">{{kit_nome}}</label>
           <input class="champ" id="gravure" type="text" maxlength="16" placeholder="{{defaut}}" autocomplete="organization">
@@ -78,6 +95,12 @@
           <p class="aide">{{kit_aneis_ajuda}}</p>
         </fieldset>
 
+        <fieldset>
+          <label class="titre" for="ongles">{{kit_unhas}}</label>
+          <input class="champ" id="ongles" type="text" maxlength="60">
+          <p class="aide">{{kit_unhas_ajuda}}</p>
+        </fieldset>
+
         <div class="commande">
           <a class="btn" id="commander" href="https://wa.me/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z" stroke-linejoin="round"/></svg>
@@ -88,7 +111,6 @@
 
         <div class="details-produit">
           <dl>
-            <dt>{{det_cont}}</dt><dd>{{det_cont_v}}</dd>
             <dt>{{det_mat}}</dt><dd>{{det_mat_v}}</dd>
             <dt>{{det_uso}}</dt><dd>{{det_uso_v}}</dd>
             <dt>{{det_fab}}</dt><dd>{{det_fab_v}}</dd>

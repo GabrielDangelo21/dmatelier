@@ -11,7 +11,8 @@ const TEXTES = {
     sep: " : ",
     question: "Bonjour DM Atelier, j'ai une question : ",
     bonjour: "Bonjour DM Atelier ! Je souhaite commander :",
-    produit: "Kit de fraises de démonstration (6 fraises, base, doigt, 5 ongles)",
+    produit: "Kit doigt de démonstration 3D (doigt 20 cm, 4 ongles, 6 embouts et support, 2 limes)",
+    ongles: "Couleurs des ongles (supplément)",
     gravure: (nom) => `Gravure : « ${nom} »`,
     sansGravure: "Sans nom de salon",
     anneaux: "Anneaux",
@@ -102,6 +103,7 @@ if (form) {
   const choisi = (nom) => form.querySelector(`input[name="${nom}"]:checked`);
   const maj = () => {
     const nom = champ.value.trim();
+    const ongles = (form.querySelector("#ongles")?.value || "").trim();
     const anneau = choisi("anneaux");
     const couleur = anneau.value === "Autre" ? T.autre : anneau.dataset.label.toLowerCase();
     const lignes = [
@@ -109,6 +111,7 @@ if (form) {
       T.produit,
       nom ? T.gravure(nom) : T.sansGravure,
       `${T.anneaux}${T.sep}${couleur}`,
+      ...(ongles && T.ongles ? [`${T.ongles}${T.sep}${ongles}`] : []),
       T.livraison,
       T.fin,
     ];

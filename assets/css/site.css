@@ -219,6 +219,12 @@ section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
 .config .prix { font: 500 1.9rem/1 var(--serif); margin: 1rem 0 .3rem; }
 .config .ttc { font-size: var(--t-xs); color: var(--charbon-doux); }
 .config .resume { margin-top: 1rem; color: var(--charbon-doux); }
+.contenu-kit { margin-top: 1.6rem; padding-top: 1.2rem; border-top: 1px solid var(--trait); }
+.contenu-kit h2 { font-size: var(--t-l); margin-bottom: .7rem; }
+.contenu-kit ul { margin: 0; padding-left: 1.1rem; }
+.contenu-kit li { margin-top: .3rem; }
+.contenu-kit ul ul { margin-top: .2rem; color: var(--charbon-doux); font-size: var(--t-s); }
+.contenu-kit .offert { margin-top: .8rem; font-weight: 500; }
 fieldset { border: 0; padding: 0; margin: 1.8rem 0 0; }
 legend, .config label.titre { font-weight: 500; font-size: var(--t-s); margin-bottom: .6rem; padding: 0; display: block; }
 .choix { display: flex; flex-wrap: wrap; gap: .5rem; }
