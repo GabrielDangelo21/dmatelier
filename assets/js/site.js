@@ -2,7 +2,7 @@
 
 // Numéro WhatsApp Business de la boutique, format international sans + ni espaces.
 // VIDE tant que le numéro n'existe pas : WhatsApp demande alors à qui envoyer.
-const WHATSAPP = "";
+const WHATSAPP = "32493733912"; // provisório: número do Gabriel até o WhatsApp Business da loja existir
 
 // Textes du message WhatsApp, dans la langue de la page (<html lang>).
 // Les noms des options traduits viennent des data-label du HTML.
