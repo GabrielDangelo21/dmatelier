@@ -43,21 +43,19 @@
       <div>
         <h1>{{hero_h1}}</h1>
         <p class="chapo">{{hero_chapo}}</p>
-        <div class="essai">
-          <label for="essai-nom">{{hero_essai}}</label>
-          <input class="champ" id="essai-nom" type="text" maxlength="22" placeholder="{{defaut}}" autocomplete="organization">
-        </div>
         <div class="actions">
-          <a class="btn" id="vers-produit" href="organisateur.html">{{cta_personalizar}}</a>
+          <a class="btn" id="vers-produit" href="kit-fraises.html">{{cta_personalizar}}</a>
           <a class="btn clair" href="#collection">{{cta_colecao}}</a>
         </div>
       </div>
 
       <figure class="scene" style="margin:0">
         <svg class="barre" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="18.8" y1="-2" x2="2.4" y2="104" vector-effect="non-scaling-stroke"/></svg>
-        <div class="produit-3d">
-          <img src="{{r}}assets/img/organisateur-gradins.webp" width="691" height="485" alt="{{hero_alt}}">
-          <span class="gravure" data-gravure aria-hidden="true">{{defaut}}</span>
+        <div class="film">
+          <video muted loop playsinline preload="metadata" poster="{{r}}assets/img/fraises-presentoir-poster.webp" aria-label="{{hero_video_aria}}" data-auto>
+            <source src="{{r}}assets/img/fraises-presentoir.mp4" type="video/mp4">
+          </video>
+          <button class="pause" type="button" data-pause="{{video_pausar}}" data-lire="{{video_tocar}}" aria-label="{{video_pausar}}" hidden></button>
         </div>
       </figure>
     </div>
@@ -71,7 +69,7 @@
       </div>
 
       <article class="vedette">
-        <img src="{{r}}assets/img/organisateur-modules.webp" width="727" height="305" alt="{{col_alt}}" loading="lazy">
+        <img src="{{r}}assets/img/fraises-set-deux-ongles.webp" width="900" height="1600" alt="{{col_alt}}" loading="lazy">
         <div>
           <h3>{{produto_nome}}</h3>
           <p class="prix">{{col_preco}}</p>
@@ -79,19 +77,11 @@
             <li>{{col_li1}}</li>
             <li>{{col_li2}}</li>
             <li>{{col_li3}}</li>
+            <li>{{col_li4}}</li>
           </ul>
-          <a class="btn" href="organisateur.html">{{cta_personalizar}}</a>
+          <a class="btn" href="kit-fraises.html">{{cta_personalizar}}</a>
         </div>
       </article>
-
-      <div class="bientot">
-        <h3>{{breve_h3}}</h3>
-        <ul>
-          <li><span>{{breve_1}}</span><span>{{breve}}</span></li>
-          <li><span>{{breve_2}}</span><span>{{breve}}</span></li>
-          <li><span>{{breve_3}}</span><span>{{breve}}</span></li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -134,7 +124,7 @@
       <details><summary>{{faq4_q}}</summary><p>{{faq4_r}}</p></details>
       <details><summary>{{faq5_q}}</summary><p>{{faq5_r}}</p></details>
       <div class="fin">
-        <a class="btn" href="organisateur.html">{{cta_personalizar}}</a>
+        <a class="btn" href="kit-fraises.html">{{cta_personalizar}}</a>
         <a class="btn clair" href="https://wa.me/" data-wa-question>{{cta_pergunta}}</a>
       </div>
     </div>

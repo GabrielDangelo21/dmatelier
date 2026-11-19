@@ -4,70 +4,55 @@
 // VIDE tant que le numéro n'existe pas : WhatsApp demande alors à qui envoyer.
 const WHATSAPP = "";
 
-// Prix TTC par nombre de modules. EXEMPLE, à remplacer par les vrais prix.
-const PRIX = { 1: 39, 2: 74, 3: 105 };
-
-// Textes du site et du message WhatsApp, dans la langue de la page (<html lang>).
-// Les valeurs des options (Ronds, Ivoire, Droite...) viennent des data-label du HTML.
+// Textes du message WhatsApp, dans la langue de la page (<html lang>).
+// Les noms des options traduits viennent des data-label du HTML.
 const TEXTES = {
   fr: {
-    locale: "fr-BE",
     sep: " : ",
-    defaut: "Votre salon",
     question: "Bonjour DM Atelier, j'ai une question : ",
-    flacons: (n) => `${n} flacons`,
     bonjour: "Bonjour DM Atelier ! Je souhaite commander :",
-    produit: (m) => `Organisateur de vernis en gradins, ${m} module${m > 1 ? "s" : ""} (${m * 15} flacons)`,
-    forme: "Flacons",
-    couleur: "Couleur",
-    gravure: (nom, style) => `Gravure : « ${nom} », style ${style}`,
-    sansGravure: "Sans gravure",
-    prix: (p) => `Prix affiché : ${p} TTC`,
+    produit: "Kit de fraises de démonstration (6 fraises, base, doigt, 5 ongles)",
+    gravure: (nom) => `Gravure : « ${nom} »`,
+    sansGravure: "Sans nom de salon",
+    anneaux: "Anneaux",
+    autre: "autre couleur, à préciser : ",
+    fin: "Merci de m'indiquer le prix et le délai.",
     livraison: "Livraison vers (pays et code postal) : ",
   },
   nl: {
-    locale: "nl-BE",
     sep: ": ",
-    defaut: "Uw salon",
     question: "Hallo DM Atelier, ik heb een vraag: ",
-    flacons: (n) => `${n} flesjes`,
     bonjour: "Hallo DM Atelier! Ik wil graag bestellen:",
-    produit: (m) => `Trapvormige nagellakorganizer, ${m} module${m > 1 ? "s" : ""} (${m * 15} flesjes)`,
-    forme: "Flesjes",
-    couleur: "Kleur",
-    gravure: (nom, style) => `Gravure: "${nom}", stijl ${style}`,
-    sansGravure: "Zonder gravure",
-    prix: (p) => `Getoonde prijs: ${p} incl. btw`,
+    produit: "Demonstratiekit met frezen (6 frezen, houder, vinger, 5 nagels)",
+    gravure: (nom) => `Gravure: "${nom}"`,
+    sansGravure: "Zonder salonnaam",
+    anneaux: "Ringen",
+    autre: "andere kleur, namelijk: ",
+    fin: "Kunt u mij de prijs en de levertijd laten weten?",
     livraison: "Levering naar (land en postcode): ",
   },
   de: {
-    locale: "de-DE",
     sep: ": ",
-    defaut: "Ihr Studio",
     question: "Hallo DM Atelier, ich habe eine Frage: ",
-    flacons: (n) => `${n} Fläschchen`,
     bonjour: "Hallo DM Atelier! Ich möchte bestellen:",
-    produit: (m) => `Stufen-Organizer für Nagellack, ${m} Modul${m > 1 ? "e" : ""} (${m * 15} Fläschchen)`,
-    forme: "Fläschchen",
-    couleur: "Farbe",
-    gravure: (nom, style) => `Gravur: „${nom}“, Stil ${style}`,
-    sansGravure: "Ohne Gravur",
-    prix: (p) => `Angezeigter Preis: ${p} inkl. MwSt.`,
+    produit: "Demo-Set mit Fräsern (6 Fräser, Halter, Finger, 5 Nägel)",
+    gravure: (nom) => `Gravur: „${nom}“`,
+    sansGravure: "Ohne Studionamen",
+    anneaux: "Ringe",
+    autre: "andere Farbe, und zwar: ",
+    fin: "Bitte nennen Sie mir Preis und Lieferzeit.",
     livraison: "Lieferung nach (Land und Postleitzahl): ",
   },
   en: {
-    locale: "en-IE",
     sep: ": ",
-    defaut: "Your salon",
     question: "Hello DM Atelier, I have a question: ",
-    flacons: (n) => `${n} bottles`,
     bonjour: "Hello DM Atelier! I would like to order:",
-    produit: (m) => `Tiered nail polish organiser, ${m} module${m > 1 ? "s" : ""} (${m * 15} bottles)`,
-    forme: "Bottles",
-    couleur: "Colour",
-    gravure: (nom, style) => `Engraving: "${nom}", ${style} style`,
-    sansGravure: "No engraving",
-    prix: (p) => `Price shown: ${p} incl. VAT`,
+    produit: "Nail drill bit demo kit (6 bits, stand, finger, 5 nails)",
+    gravure: (nom) => `Engraving: "${nom}"`,
+    sansGravure: "No salon name",
+    anneaux: "Rings",
+    autre: "another colour: ",
+    fin: "Could you tell me the price and lead time?",
     livraison: "Delivery to (country and postcode): ",
   },
 };
@@ -75,19 +60,6 @@ const T = TEXTES[document.documentElement.lang] || TEXTES.fr;
 
 const waLien = (texte) =>
   (WHATSAPP ? `https://wa.me/${WHATSAPP}` : "https://wa.me/") + "?text=" + encodeURIComponent(texte);
-
-const euros = (n) => n.toLocaleString(T.locale, { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
-
-// Gravure en direct : le champ alimente tous les [data-gravure].
-function gravureEnDirect(source) {
-  const cibles = document.querySelectorAll("[data-gravure]");
-  const maj = () => {
-    const t = source.value.trim() || T.defaut;
-    cibles.forEach((c) => { c.textContent = t; });
-  };
-  source.addEventListener("input", maj);
-  maj();
-}
 
 // Le nom tapé suit la visiteuse quand elle change de langue.
 function garderGravureDansLangues(valeur) {
@@ -98,53 +70,47 @@ function garderGravureDansLangues(valeur) {
   });
 }
 
-// Accueil
-const essai = document.querySelector("#essai-nom");
-if (essai) {
-  const depuisUrl = new URLSearchParams(location.search).get("gravure");
-  if (depuisUrl) essai.value = depuisUrl.slice(0, 22);
-  gravureEnDirect(essai);
-  const lienProduit = document.querySelector("#vers-produit");
-  const garder = () => {
-    const v = essai.value.trim();
-    lienProduit.href = "organisateur.html" + (v ? "?gravure=" + encodeURIComponent(v) : "");
-    garderGravureDansLangues(v);
-  };
-  essai.addEventListener("input", garder);
-  garder();
-}
 document.querySelectorAll("[data-wa-question]").forEach((a) => {
   a.href = waLien(T.question);
 });
 
-// Page produit
+// Vidéo : lecture automatique sans son, sauf si la visiteuse a réduit les animations.
+// Le bouton met en pause et relance.
+const calme = matchMedia("(prefers-reduced-motion: reduce)");
+document.querySelectorAll("video[data-auto]").forEach((video) => {
+  const bouton = video.parentElement.querySelector(".pause");
+  const etat = () => {
+    const enPause = video.paused;
+    bouton.classList.toggle("lire", enPause);
+    bouton.setAttribute("aria-label", enPause ? bouton.dataset.lire : bouton.dataset.pause);
+  };
+  bouton.hidden = false;
+  bouton.addEventListener("click", () => { video.paused ? video.play() : video.pause(); });
+  video.addEventListener("play", etat);
+  video.addEventListener("pause", etat);
+  if (!calme.matches) video.play().catch(() => {});
+  etat();
+});
+
+// Page du kit
 const form = document.querySelector("#config");
 if (form) {
   const champ = form.querySelector("#gravure");
-  const depuisAccueil = new URLSearchParams(location.search).get("gravure");
-  if (depuisAccueil) champ.value = depuisAccueil.slice(0, 22);
-  gravureEnDirect(champ);
+  const depuisUrl = new URLSearchParams(location.search).get("gravure");
+  if (depuisUrl) champ.value = depuisUrl.slice(0, Number(champ.maxLength) || 16);
 
-  const val = (nom) => form.querySelector(`input[name="${nom}"]:checked`);
-  const libelle = (nom) => { const i = val(nom); return i.dataset.label || i.value; };
+  const choisi = (nom) => form.querySelector(`input[name="${nom}"]:checked`);
   const maj = () => {
-    const modules = Number(val("modules").value);
-    const prix = PRIX[modules];
-    form.querySelector("#prix").textContent = euros(prix);
-    form.querySelector("#flacons").textContent = T.flacons(modules * 15);
-
-    const style = val("style").value;
-    document.querySelectorAll("[data-gravure]").forEach((g) => g.classList.toggle("classique", style === "Classique"));
-
     const nom = champ.value.trim();
+    const anneau = choisi("anneaux");
+    const couleur = anneau.value === "Autre" ? T.autre : anneau.dataset.label.toLowerCase();
     const lignes = [
       T.bonjour,
-      T.produit(modules),
-      `${T.forme}${T.sep}${libelle("forme").toLowerCase()}`,
-      `${T.couleur}${T.sep}${libelle("couleur")}`,
-      nom ? T.gravure(nom, libelle("style").toLowerCase()) : T.sansGravure,
-      T.prix(euros(prix)),
+      T.produit,
+      nom ? T.gravure(nom) : T.sansGravure,
+      `${T.anneaux}${T.sep}${couleur}`,
       T.livraison,
+      T.fin,
     ];
     form.querySelector("#commander").href = waLien(lignes.join("\n"));
     garderGravureDansLangues(nom);

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="{{lang}}" data-type="product">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{kit_titulo}}</title>
+<meta name="description" content="{{kit_desc}}">
+<meta name="site-kind" content="product">
+<meta name="theme-color" content="#f5ede1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DM Atelier">
+<meta property="og:title" content="{{kit_titulo}}">
+<meta property="og:description" content="{{kit_desc}}">
+<meta name="twitter:card" content="summary">
+{{hreflang}}
+<link rel="stylesheet" href="{{r}}assets/css/site.css">
+<link rel="icon" href="{{r}}assets/logo/dm-monogramme.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#contenu">{{skip}}</a>
+<p class="apercu">{{apercu}}</p>
+
+<header class="entete">
+  <div class="wrap">
+    <a class="marque" href="index.html" aria-label="{{marque_aria}}">
+      <img src="{{r}}assets/logo/dm-monogramme.svg" alt="" width="82" height="104">
+      <span><b>DM ATELIER</b><small>by Dayse Marques</small></span>
+    </a>
+    <nav class="nav" aria-label="{{nav_aria}}">
+      <a class="lien" href="index.html#collection">{{nav_colecao}}</a>
+      <a class="lien" href="index.html#questions">{{nav_perguntas}}</a>
+      <a class="wa" href="https://wa.me/" data-wa-question>WhatsApp</a>
+      {{langues}}
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <div class="wrap fil"><a href="index.html#collection">{{nav_colecao}}</a> / {{kit_fil}}</div>
+
+  <section class="produit">
+    <div class="wrap">
+      <div class="galerie">
+        <figure class="scene" style="margin:0">
+          <svg class="barre" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="18.8" y1="-2" x2="2.4" y2="104" vector-effect="non-scaling-stroke"/></svg>
+          <div class="film">
+            <video muted loop playsinline preload="metadata" poster="{{r}}assets/img/fraises-presentoir-poster.webp" aria-label="{{hero_video_aria}}" data-auto>
+              <source src="{{r}}assets/img/fraises-presentoir.mp4" type="video/mp4">
+            </video>
+            <button class="pause" type="button" data-pause="{{video_pausar}}" data-lire="{{video_tocar}}" aria-label="{{video_pausar}}" hidden></button>
+          </div>
+        </figure>
+        <div class="vues">
+          <div class="vue photo"><img src="{{r}}assets/img/fraises-set-deux-ongles.webp" width="900" height="1600" alt="{{kit_alt1}}" loading="lazy"></div>
+          <div class="vue photo"><img src="{{r}}assets/img/fraises-set-ongle-fuchsia.webp" width="900" height="1600" alt="{{kit_alt2}}" loading="lazy"></div>
+          <div class="vue photo"><img src="{{r}}assets/img/fraises-set-ongle-rouge.webp" width="900" height="1600" alt="{{kit_alt3}}" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="config" id="config">
+        <h1>{{produto_nome}}</h1>
+        <p class="prix">{{kit_preco}}</p>
+        <p class="ttc">{{kit_ttc}}</p>
+        <p class="resume">{{kit_resumo}}</p>
+
+        <fieldset>
+          <label class="titre" for="gravure">{{kit_nome}}</label>
+          <input class="champ" id="gravure" type="text" maxlength="16" placeholder="{{defaut}}" autocomplete="organization">
+          <p class="aide">{{kit_nome_ajuda}}</p>
+        </fieldset>
+
+        <fieldset>
+          <legend>{{kit_aneis}}</legend>
+          <div class="choix">
+            <input type="radio" name="anneaux" id="a1" value="Rouge" data-label="{{anel_vermelho}}" checked><label for="a1"><span class="pastille" style="background:#d1262b"></span>{{anel_vermelho}}</label>
+            <input type="radio" name="anneaux" id="a2" value="Autre" data-label="{{anel_outro}}"><label for="a2">{{anel_outro}}</label>
+          </div>
+          <p class="aide">{{kit_aneis_ajuda}}</p>
+        </fieldset>
+
+        <div class="commande">
+          <a class="btn" id="commander" href="https://wa.me/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z" stroke-linejoin="round"/></svg>
+            {{org_botao}}
+          </a>
+          <p class="aide">{{org_botao_ajuda}}</p>
+        </div>
+
+        <div class="details-produit">
+          <dl>
+            <dt>{{det_cont}}</dt><dd>{{det_cont_v}}</dd>
+            <dt>{{det_mat}}</dt><dd>{{det_mat_v}}</dd>
+            <dt>{{det_uso}}</dt><dd>{{det_uso_v}}</dd>
+            <dt>{{det_fab}}</dt><dd>{{det_fab_v}}</dd>
+            <dt>{{det_ret}}</dt><dd>{{det_ret_v}}</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div>
+      <a class="marque" href="index.html" aria-label="{{marque_aria}}"><img src="{{r}}assets/logo/dm-monogramme.svg" alt="" width="82" height="104"><span><b>DM ATELIER</b><small>by Dayse Marques, Professional Collection</small></span></a>
+      <p style="margin-top:1rem">{{rodape_empresa}}<br>{{rodape_endereco}}</p>
+    </div>
+    <ul>
+      <li><a href="index.html#collection">{{nav_colecao}}</a></li>
+      <li><a href="index.html#questions">{{nav_perguntas}}</a></li>
+      <li><a href="https://wa.me/" data-wa-question>WhatsApp</a></li>
+    </ul>
+    <ul>
+      <li><a href="legal.html#mentions">{{leg_mencoes}}</a></li>
+      <li><a href="legal.html#conditions">{{leg_condicoes}}</a></li>
+      <li><a href="legal.html#confidentialite">{{leg_privacidade}}</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="{{r}}assets/js/site.js"></script>
+</body>
+</html>

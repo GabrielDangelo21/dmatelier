@@ -10,8 +10,10 @@ import re
 from pathlib import Path
 
 RAIZ = Path(__file__).parent
-IDIOMAS = ["fr", "nl", "de", "en"]  # o primeiro fica na raiz
-PAGINAS = ["index.html", "organisateur.html", "legal.html"]
+# Por enquanto só francês (decisão de 19/11). Para publicar os outros idiomas,
+# volte para ["fr", "nl", "de", "en"]: os textos estão em _textos/ (desatualizados a partir daqui).
+IDIOMAS = ["fr"]  # o primeiro fica na raiz
+PAGINAS = ["index.html", "kit-fraises.html", "legal.html"]
 CHAVE = re.compile(r"\{\{(\w+)\}\}")
 
 
@@ -20,7 +22,9 @@ def pasta(lang):
 
 
 def seletor(lang, pagina, textos):
-    """Lista de idiomas no cabeçalho (sem JavaScript)."""
+    """Lista de idiomas no cabeçalho (sem JavaScript). Some com um idioma só."""
+    if len(IDIOMAS) < 2:
+        return ""
     volta = "" if lang == IDIOMAS[0] else "../"
     itens = []
     for outro in IDIOMAS:
@@ -37,6 +41,8 @@ def seletor(lang, pagina, textos):
 
 
 def alternativas(pagina):
+    if len(IDIOMAS) < 2:
+        return ""
     linhas = [f'<link rel="alternate" hreflang="{l}" href="/{pasta(l)}{pagina}">' for l in IDIOMAS]
     linhas.append(f'<link rel="alternate" hreflang="x-default" href="/{pagina}">')
     return "\n".join(linhas)
