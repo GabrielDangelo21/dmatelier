@@ -220,7 +220,7 @@ section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
 .config .ttc { font-size: var(--t-xs); color: var(--charbon-doux); }
 .config .resume { margin-top: 1rem; color: var(--charbon-doux); }
 .contenu-kit { margin-top: 1.6rem; padding-top: 1.2rem; border-top: 1px solid var(--trait); }
-.contenu-kit h2 { font-size: var(--t-l); margin-bottom: .7rem; }
+.contenu-kit h2 { font-size: 1.7rem; margin-bottom: .7rem; }
 .contenu-kit ul { margin: 0; padding-left: 1.1rem; }
 .contenu-kit li { margin-top: .3rem; }
 .contenu-kit ul ul { margin-top: .2rem; color: var(--charbon-doux); font-size: var(--t-s); }
@@ -267,3 +267,22 @@ legend, .config label.titre { font-weight: 500; font-size: var(--t-s); margin-bo
   .etapes ol { grid-template-columns: 1fr 1fr; gap: 2rem 1.75rem; }
   .etapes .intro-section { grid-column: 1 / -1; }
 }
+
+/* Aperçu du logo de la cliente sur la face avant du support */
+.support-apercu { position: relative; margin: .2rem 0 0; border-radius: 4px; overflow: hidden; aspect-ratio: 820 / 295; background: var(--trait) center / cover no-repeat; }
+.support-apercu .face { position: absolute; left: 5.1%; width: 89%; top: 47.5%; height: 40.7%; display: grid; grid-template: 100% / 100%; place-items: center; }
+.support-apercu .face > * { grid-area: 1 / 1; }
+#logo-canvas {
+  max-width: calc(var(--taille, .8) * 62%); max-height: calc(var(--taille, .8) * 100%); width: auto; height: auto;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, .3)) drop-shadow(0 -1px 0 rgba(0, 0, 0, .35));
+}
+#logo-nom {
+  font: 500 clamp(.8rem, 3.9vw, 1.2rem)/1 var(--serif); letter-spacing: .14em; text-transform: uppercase; white-space: nowrap;
+  color: rgba(24, 25, 28, .78); text-shadow: 0 1px 0 rgba(255, 255, 255, .3), 0 -1px 0 rgba(0, 0, 0, .25);
+  max-width: 94%; overflow: hidden;
+}
+.logo-actions { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; margin-top: .8rem; }
+.lien-btn { background: none; border: 0; padding: 0 .25rem; min-height: 44px; color: var(--charbon); font: inherit; font-size: var(--t-s); text-decoration: underline; text-underline-offset: .2em; cursor: pointer; }
+.logo-taille { display: grid; gap: .2rem; margin-top: .6rem; font-size: var(--t-s); }
+.logo-taille input { accent-color: var(--charbon); min-height: 44px; width: 100%; }
+.logo-taille[hidden], .lien-btn[hidden] { display: none; }

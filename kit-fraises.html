@@ -83,7 +83,24 @@
         <fieldset>
           <label class="titre" for="gravure">Nom du salon à graver</label>
           <input class="champ" id="gravure" type="text" maxlength="16" placeholder="Votre salon" autocomplete="organization">
-          <p class="aide">16 caractères au maximum, gravés sur les embouts et sur le support. Laissez vide pour un kit sans nom de salon.</p>
+          <p class="aide">16 caractères au maximum, gravés sur les embouts. Sans logo, le nom est aussi gravé sur le support. Laissez vide pour un kit sans nom de salon.</p>
+        </fieldset>
+
+        <fieldset class="logo-client">
+          <legend>Votre logo sur le support</legend>
+          <figure class="support-apercu" role="img" aria-label="Aperçu du support des embouts, face avant, avec votre logo ou le nom de votre salon gravé." style="background-image:url(assets/img/support-sans-logo.webp)">
+            <div class="face"><canvas id="logo-canvas" aria-hidden="true"></canvas><span id="logo-nom" aria-hidden="true">Votre salon</span></div>
+          </figure>
+          <div class="logo-actions">
+            <button type="button" class="btn clair" id="logo-ajouter">Ajouter votre logo</button>
+            <input id="logo-fichier" type="file" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden>
+            <button type="button" class="lien-btn" id="logo-retirer" hidden>Retirer le logo</button>
+          </div>
+          <div class="logo-taille" hidden>
+            <label for="logo-taille">Taille du logo</label>
+            <input id="logo-taille" type="range" min="40" max="100" value="80">
+          </div>
+          <p class="aide" id="logo-etat" data-ok="Aperçu indicatif : la gravure se fait en une couleur, sans dégradé. Nous validons le logo avec vous avant l&#x27;impression. Pensez à joindre le fichier dans le message WhatsApp." data-erro="Ce fichier ne peut pas être lu. Essayez un PNG ou un JPG." data-vazio="Facultatif. PNG, JPG ou SVG. Le fichier reste sur votre appareil : rien n&#x27;est envoyé tant que vous ne nous l&#x27;envoyez pas sur WhatsApp.">Facultatif. PNG, JPG ou SVG. Le fichier reste sur votre appareil : rien n&#x27;est envoyé tant que vous ne nous l&#x27;envoyez pas sur WhatsApp.</p>
         </fieldset>
 
         <fieldset>

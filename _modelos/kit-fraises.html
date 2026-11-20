@@ -86,6 +86,23 @@
           <p class="aide">{{kit_nome_ajuda}}</p>
         </fieldset>
 
+        <fieldset class="logo-client">
+          <legend>{{logo_titulo}}</legend>
+          <figure class="support-apercu" role="img" aria-label="{{logo_alt}}" style="background-image:url({{r}}assets/img/support-sans-logo.webp)">
+            <div class="face"><canvas id="logo-canvas" aria-hidden="true"></canvas><span id="logo-nom" aria-hidden="true">{{defaut}}</span></div>
+          </figure>
+          <div class="logo-actions">
+            <button type="button" class="btn clair" id="logo-ajouter">{{logo_botao}}</button>
+            <input id="logo-fichier" type="file" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden>
+            <button type="button" class="lien-btn" id="logo-retirer" hidden>{{logo_retirar}}</button>
+          </div>
+          <div class="logo-taille" hidden>
+            <label for="logo-taille">{{logo_tamanho}}</label>
+            <input id="logo-taille" type="range" min="40" max="100" value="80">
+          </div>
+          <p class="aide" id="logo-etat" data-ok="{{logo_ok}}" data-erro="{{logo_erro}}" data-vazio="{{logo_ajuda}}">{{logo_ajuda}}</p>
+        </fieldset>
+
         <fieldset>
           <legend>{{kit_aneis}}</legend>
           <div class="choix">

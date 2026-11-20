@@ -104,7 +104,7 @@
   "kit_ttc": "Le prix TTC et la livraison vous sont confirmés avant le paiement.",
   "kit_resumo": "Un support pédagogique conçu pour faciliter les démonstrations techniques lors de vos formations.",
   "kit_nome": "Nom du salon à graver",
-  "kit_nome_ajuda": "16 caractères au maximum, gravés sur les embouts et sur le support. Laissez vide pour un kit sans nom de salon.",
+  "kit_nome_ajuda": "16 caractères au maximum, gravés sur les embouts. Sans logo, le nom est aussi gravé sur le support. Laissez vide pour un kit sans nom de salon.",
   "kit_aneis": "Couleur des anneaux",
   "anel_vermelho": "Rouge",
   "anel_outro": "Autre couleur",
@@ -125,5 +125,13 @@
   "kc_p6": "Embout émeri",
   "kc_suporte": "Support pour les embouts",
   "kc_limas": "2 limes",
-  "kc_brinde": "Offert : bâtonnets de buis."
+  "kc_brinde": "Offert : bâtonnets de buis.",
+  "logo_titulo": "Votre logo sur le support",
+  "logo_alt": "Aperçu du support des embouts, face avant, avec votre logo ou le nom de votre salon gravé.",
+  "logo_botao": "Ajouter votre logo",
+  "logo_retirar": "Retirer le logo",
+  "logo_tamanho": "Taille du logo",
+  "logo_ajuda": "Facultatif. PNG, JPG ou SVG. Le fichier reste sur votre appareil : rien n'est envoyé tant que vous ne nous l'envoyez pas sur WhatsApp.",
+  "logo_ok": "Aperçu indicatif : la gravure se fait en une couleur, sans dégradé. Nous validons le logo avec vous avant l'impression. Pensez à joindre le fichier dans le message WhatsApp.",
+  "logo_erro": "Ce fichier ne peut pas être lu. Essayez un PNG ou un JPG."
 }
