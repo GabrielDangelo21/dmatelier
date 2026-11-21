@@ -296,3 +296,23 @@ legend, .config label.titre { font-weight: 500; font-size: var(--t-s); margin-bo
 .nuancier input:focus-visible + label { outline: 2px solid var(--lilas-encre); outline-offset: 2px; }
 .nuancier input:disabled + label { opacity: .35; cursor: not-allowed; }
 #ongles-choix { font-weight: 500; color: var(--charbon); }
+
+/* Sélecteur forme + couleur : les 4 ongles du kit, chacun avec sa couleur */
+.ongles-formes { display: grid; grid-template-columns: repeat(4, 1fr); gap: .4rem; margin-top: .9rem; }
+.ongles-formes input { position: absolute; opacity: 0; pointer-events: none; }
+.ongles-formes label {
+  display: grid; justify-items: center; align-content: end; gap: .3rem; padding: .7rem .2rem .55rem;
+  border: 1px solid var(--trait); border-radius: 6px; background: var(--surface); cursor: pointer; text-align: center;
+}
+.ongles-formes input:checked + label { border-color: var(--charbon); box-shadow: inset 0 0 0 1px var(--charbon); }
+.ongles-formes input:focus-visible + label { outline: 2px solid var(--lilas-encre); outline-offset: 2px; }
+.ongle {
+  --c: #f8f6f2; position: relative; height: calc(var(--h) * .19px); aspect-ratio: var(--w) / var(--h); isolation: isolate;
+  background: var(--c); -webkit-mask: var(--img) center bottom / contain no-repeat; mask: var(--img) center bottom / contain no-repeat;
+  transition: background-color .25s ease;
+}
+.ongle::after { content: ""; position: absolute; inset: 0; background: var(--img) center bottom / contain no-repeat; mix-blend-mode: multiply; }
+.ongles-formes .nom { font-size: var(--t-xs); font-weight: 500; line-height: 1.2; }
+.ongles-formes .teinte { font-size: .75rem; color: var(--charbon-doux); line-height: 1.2; }
+.ongle-etape { margin: 1.1rem 0 .5rem; font-size: var(--t-s); font-weight: 500; }
+.nuancier label.standard span:first-child { background: #fbfaf7; }

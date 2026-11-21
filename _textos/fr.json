@@ -111,8 +111,8 @@
   "kit_aneis_ajuda": "Pour une autre couleur, précisez-la dans le message WhatsApp.",
   "det_uso": "Usage",
   "det_uso_v": "Démonstration en formation, pas pour la ponceuse",
-  "kit_unhas": "Couleurs des ongles",
-  "kit_unhas_ajuda": "Facultatif, avec supplément : jusqu'à 4 couleurs, une par ongle. Le supplément vous est confirmé sur WhatsApp.",
+  "kit_unhas": "Couleur de chaque ongle",
+  "kit_unhas_ajuda": "Le kit comprend les 4 formes, blanches par défaut. Pour une autre couleur, touchez un ongle puis choisissez sa teinte (supplément confirmé sur WhatsApp).",
   "kc_titulo": "Le kit comprend",
   "kc_dedo": "1 doigt de démonstration grand format de 20 cm",
   "kc_unhas": "4 formes d'ongles interchangeables (couleurs au choix avec supplément)",
@@ -134,5 +134,8 @@
   "logo_ajuda": "Facultatif. PNG, JPG ou SVG. Le fichier reste sur votre appareil : rien n'est envoyé tant que vous ne nous l'envoyez pas sur WhatsApp.",
   "logo_ok": "Aperçu indicatif : la gravure se fait en une couleur, sans dégradé. Nous validons le logo avec vous avant l'impression. Pensez à joindre le fichier dans le message WhatsApp.",
   "logo_erro": "Ce fichier ne peut pas être lu. Essayez un PNG ou un JPG.",
-  "kit_unhas_vazio": "Aucune couleur choisie."
+  "kit_unhas_qual": "Ongle à colorer",
+  "kit_unhas_padrao": "Blanc",
+  "kit_unhas_etapa_ini": "Couleur de l'ongle Amande",
+  "kit_unhas_etapa": "Couleur de l'ongle {nom}"
 }

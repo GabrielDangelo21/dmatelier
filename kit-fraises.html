@@ -112,22 +112,29 @@
           <p class="aide">Pour une autre couleur, précisez-la dans le message WhatsApp.</p>
         </fieldset>
 
-        <fieldset>
-          <legend>Couleurs des ongles</legend>
-          <div class="nuancier" id="ongles">
-            <input type="checkbox" name="ongles" id="o-rouge" value="Bordeaux"><label for="o-rouge" title="Bordeaux"><span style="background:#a51c26"></span><span class="sr-only">Bordeaux</span></label>
-            <input type="checkbox" name="ongles" id="o-orange" value="Orange"><label for="o-orange" title="Orange"><span style="background:#f57c34"></span><span class="sr-only">Orange</span></label>
-            <input type="checkbox" name="ongles" id="o-jaune" value="Jaune"><label for="o-jaune" title="Jaune"><span style="background:#fdc62c"></span><span class="sr-only">Jaune</span></label>
-            <input type="checkbox" name="ongles" id="o-vert" value="Vert"><label for="o-vert" title="Vert"><span style="background:#55623d"></span><span class="sr-only">Vert</span></label>
-            <input type="checkbox" name="ongles" id="o-bleu" value="Bleu"><label for="o-bleu" title="Bleu"><span style="background:#1f47b0"></span><span class="sr-only">Bleu</span></label>
-            <input type="checkbox" name="ongles" id="o-violet" value="Violet"><label for="o-violet" title="Violet"><span style="background:#7656b8"></span><span class="sr-only">Violet</span></label>
-            <input type="checkbox" name="ongles" id="o-fuchsia" value="Fuchsia"><label for="o-fuchsia" title="Fuchsia"><span style="background:#d42fa3"></span><span class="sr-only">Fuchsia</span></label>
-            <input type="checkbox" name="ongles" id="o-rose" value="Rose pâle"><label for="o-rose" title="Rose pâle"><span style="background:#f6d3d3"></span><span class="sr-only">Rose pâle</span></label>
-            <input type="checkbox" name="ongles" id="o-blanc" value="Blanc nacré"><label for="o-blanc" title="Blanc nacré"><span style="background:#ede8dc"></span><span class="sr-only">Blanc nacré</span></label>
-            <input type="checkbox" name="ongles" id="o-marron" value="Marron"><label for="o-marron" title="Marron"><span style="background:#6b4a3a"></span><span class="sr-only">Marron</span></label>
+        <fieldset class="ongles-config">
+          <legend>Couleur de chaque ongle</legend>
+          <p class="aide">Le kit comprend les 4 formes, blanches par défaut. Pour une autre couleur, touchez un ongle puis choisissez sa teinte (supplément confirmé sur WhatsApp).</p>
+          <div class="ongles-formes" role="radiogroup" aria-label="Ongle à colorer">
+            <input type="radio" name="ongle-actif" id="f-amande" value="amande" data-nom="Amande" checked><label for="f-amande"><span class="ongle" id="ongle-amande" style="--img:url(/assets/img/ongles/amande.webp);--w:252;--h:562"></span><span class="nom">Amande</span><span class="teinte" id="teinte-amande">Blanc</span></label>
+            <input type="radio" name="ongle-actif" id="f-carre-effile" value="carre-effile" data-nom="Carré effilé"><label for="f-carre-effile"><span class="ongle" id="ongle-carre-effile" style="--img:url(/assets/img/ongles/carre-effile.webp);--w:255;--h:577"></span><span class="nom">Carré effilé</span><span class="teinte" id="teinte-carre-effile">Blanc</span></label>
+            <input type="radio" name="ongle-actif" id="f-naturelle" value="naturelle" data-nom="Naturelle"><label for="f-naturelle"><span class="ongle" id="ongle-naturelle" style="--img:url(/assets/img/ongles/naturelle.webp);--w:243;--h:380"></span><span class="nom">Naturelle</span><span class="teinte" id="teinte-naturelle">Blanc</span></label>
+            <input type="radio" name="ongle-actif" id="f-squoval" value="squoval" data-nom="Squoval"><label for="f-squoval"><span class="ongle" id="ongle-squoval" style="--img:url(/assets/img/ongles/squoval.webp);--w:254;--h:379"></span><span class="nom">Squoval</span><span class="teinte" id="teinte-squoval">Blanc</span></label>
           </div>
-          <p class="aide" id="ongles-choix" data-vazio="Aucune couleur choisie." aria-live="polite">Aucune couleur choisie.</p>
-          <p class="aide">Facultatif, avec supplément : jusqu&#x27;à 4 couleurs, une par ongle. Le supplément vous est confirmé sur WhatsApp.</p>
+          <p class="ongle-etape" id="ongle-etape" data-modele="Couleur de l&#x27;ongle {nom}">Couleur de l&#x27;ongle Amande</p>
+          <div class="nuancier" role="radiogroup" aria-labelledby="ongle-etape">
+            <input type="radio" name="couleur-ongle" id="c-standard" value="" data-hex="" checked><label for="c-standard" class="standard" title="Blanc"><span></span><span class="sr-only">Blanc</span></label>
+            <input type="radio" name="couleur-ongle" id="c-rouge" value="Bordeaux" data-hex="#a51c26"><label for="c-rouge" title="Bordeaux"><span style="background:#a51c26"></span><span class="sr-only">Bordeaux</span></label>
+            <input type="radio" name="couleur-ongle" id="c-orange" value="Orange" data-hex="#f57c34"><label for="c-orange" title="Orange"><span style="background:#f57c34"></span><span class="sr-only">Orange</span></label>
+            <input type="radio" name="couleur-ongle" id="c-jaune" value="Jaune" data-hex="#fdc62c"><label for="c-jaune" title="Jaune"><span style="background:#fdc62c"></span><span class="sr-only">Jaune</span></label>
+            <input type="radio" name="couleur-ongle" id="c-vert" value="Vert" data-hex="#55623d"><label for="c-vert" title="Vert"><span style="background:#55623d"></span><span class="sr-only">Vert</span></label>
+            <input type="radio" name="couleur-ongle" id="c-bleu" value="Bleu" data-hex="#1f47b0"><label for="c-bleu" title="Bleu"><span style="background:#1f47b0"></span><span class="sr-only">Bleu</span></label>
+            <input type="radio" name="couleur-ongle" id="c-violet" value="Violet" data-hex="#7656b8"><label for="c-violet" title="Violet"><span style="background:#7656b8"></span><span class="sr-only">Violet</span></label>
+            <input type="radio" name="couleur-ongle" id="c-fuchsia" value="Fuchsia" data-hex="#d42fa3"><label for="c-fuchsia" title="Fuchsia"><span style="background:#d42fa3"></span><span class="sr-only">Fuchsia</span></label>
+            <input type="radio" name="couleur-ongle" id="c-rose" value="Rose pâle" data-hex="#f6d3d3"><label for="c-rose" title="Rose pâle"><span style="background:#f6d3d3"></span><span class="sr-only">Rose pâle</span></label>
+            <input type="radio" name="couleur-ongle" id="c-blanc" value="Blanc nacré" data-hex="#ede8dc"><label for="c-blanc" title="Blanc nacré"><span style="background:#ede8dc"></span><span class="sr-only">Blanc nacré</span></label>
+            <input type="radio" name="couleur-ongle" id="c-marron" value="Marron" data-hex="#6b4a3a"><label for="c-marron" title="Marron"><span style="background:#6b4a3a"></span><span class="sr-only">Marron</span></label>
+          </div>
         </fieldset>
 
         <div class="commande">

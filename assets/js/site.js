@@ -12,7 +12,7 @@ const TEXTES = {
     question: "Bonjour DM Atelier, j'ai une question : ",
     bonjour: "Bonjour DM Atelier ! Je souhaite commander :",
     produit: "Kit doigt de démonstration 3D (doigt 20 cm, 4 ongles, 6 embouts et support, 2 limes)",
-    ongles: "Couleurs des ongles (supplément)",
+    ongles: "Ongles en couleur (supplément)",
     logo: "Logo sur le support : je joins le fichier à ce message.",
     gravure: (nom) => `Gravure : « ${nom} »`,
     sansGravure: "Sans nom de salon",
@@ -136,6 +136,7 @@ function gravureDuLogo(img) {
 }
 
 // Page du kit
+const couleursOngles = {}, nomsOngles = {};
 const form = document.querySelector("#config");
 if (form) {
   const champ = form.querySelector("#gravure");
@@ -145,7 +146,7 @@ if (form) {
   const choisi = (nom) => form.querySelector(`input[name="${nom}"]:checked`);
   const maj = () => {
     const nom = champ.value.trim();
-    const ongles = [...form.querySelectorAll('input[name="ongles"]:checked')].map((i) => i.value).join(", ");
+    const ongles = Object.entries(couleursOngles).filter(([, c]) => c).map(([f, c]) => `${nomsOngles[f]} en ${c.toLowerCase()}`).join(", ");
     const anneau = choisi("anneaux");
     const couleur = anneau.value === "Autre" ? T.autre : anneau.dataset.label.toLowerCase();
     const lignes = [
@@ -164,15 +165,23 @@ if (form) {
   form.addEventListener("input", maj);
   form.addEventListener("change", maj);
 
-  // Couleurs des ongles : 4 au maximum (une par ongle), les autres se grisent.
-  const nuances = [...form.querySelectorAll('input[name="ongles"]')];
-  const choixOngles = form.querySelector("#ongles-choix");
-  const majOngles = () => {
-    const pris = nuances.filter((i) => i.checked);
-    nuances.forEach((i) => { i.disabled = !i.checked && pris.length >= 4; });
-    choixOngles.textContent = pris.length ? pris.map((i) => i.value).join(", ") : choixOngles.dataset.vazio;
-  };
-  nuances.forEach((i) => i.addEventListener("change", majOngles));
+  // Forme + couleur : on choisit un ongle, puis sa couleur. Chaque ongle garde la sienne.
+  form.querySelectorAll('input[name="ongle-actif"]').forEach((i) => { nomsOngles[i.value] = i.dataset.nom; couleursOngles[i.value] = ""; });
+  const etape = form.querySelector("#ongle-etape");
+  const actif = () => form.querySelector('input[name="ongle-actif"]:checked');
+  form.querySelectorAll('input[name="ongle-actif"]').forEach((i) => i.addEventListener("change", () => {
+    etape.textContent = etape.dataset.modele.replace("{nom}", i.dataset.nom);
+    const c = couleursOngles[i.value];
+    const radio = [...form.querySelectorAll('input[name="couleur-ongle"]')].find((r) => r.value === c);
+    if (radio) radio.checked = true;
+  }));
+  form.querySelectorAll('input[name="couleur-ongle"]').forEach((r) => r.addEventListener("change", () => {
+    const f = actif().value;
+    couleursOngles[f] = r.value;
+    const ongle = form.querySelector("#ongle-" + f);
+    if (r.dataset.hex) ongle.style.setProperty("--c", r.dataset.hex); else ongle.style.removeProperty("--c");
+    form.querySelector("#teinte-" + f).textContent = r.value || form.querySelector('label[for="c-standard"]').title;
+  }));
 
   // Aperçu du support : le logo, ou à défaut le nom du salon.
   const fichier = form.querySelector("#logo-fichier");
