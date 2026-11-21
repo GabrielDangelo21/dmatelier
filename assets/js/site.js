@@ -145,7 +145,7 @@ if (form) {
   const choisi = (nom) => form.querySelector(`input[name="${nom}"]:checked`);
   const maj = () => {
     const nom = champ.value.trim();
-    const ongles = (form.querySelector("#ongles")?.value || "").trim();
+    const ongles = [...form.querySelectorAll('input[name="ongles"]:checked')].map((i) => i.value).join(", ");
     const anneau = choisi("anneaux");
     const couleur = anneau.value === "Autre" ? T.autre : anneau.dataset.label.toLowerCase();
     const lignes = [
@@ -163,6 +163,16 @@ if (form) {
   };
   form.addEventListener("input", maj);
   form.addEventListener("change", maj);
+
+  // Couleurs des ongles : 4 au maximum (une par ongle), les autres se grisent.
+  const nuances = [...form.querySelectorAll('input[name="ongles"]')];
+  const choixOngles = form.querySelector("#ongles-choix");
+  const majOngles = () => {
+    const pris = nuances.filter((i) => i.checked);
+    nuances.forEach((i) => { i.disabled = !i.checked && pris.length >= 4; });
+    choixOngles.textContent = pris.length ? pris.map((i) => i.value).join(", ") : choixOngles.dataset.vazio;
+  };
+  nuances.forEach((i) => i.addEventListener("change", majOngles));
 
   // Aperçu du support : le logo, ou à défaut le nom du salon.
   const fichier = form.querySelector("#logo-fichier");

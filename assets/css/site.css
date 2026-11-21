@@ -286,3 +286,13 @@ legend, .config label.titre { font-weight: 500; font-size: var(--t-s); margin-bo
 .logo-taille { display: grid; gap: .2rem; margin-top: .6rem; font-size: var(--t-s); }
 .logo-taille input { accent-color: var(--charbon); min-height: 44px; width: 100%; }
 .logo-taille[hidden], .lien-btn[hidden] { display: none; }
+
+/* Nuancier des ongles : un rond par couleur, le nom dans l'infobulle et pour les lecteurs d'écran */
+.nuancier { display: flex; flex-wrap: wrap; gap: .4rem; }
+.nuancier input { position: absolute; opacity: 0; pointer-events: none; }
+.nuancier label { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; border: 2px solid transparent; }
+.nuancier label span:first-child { width: 32px; height: 32px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .15); }
+.nuancier input:checked + label { border-color: var(--charbon); }
+.nuancier input:focus-visible + label { outline: 2px solid var(--lilas-encre); outline-offset: 2px; }
+.nuancier input:disabled + label { opacity: .35; cursor: not-allowed; }
+#ongles-choix { font-weight: 500; color: var(--charbon); }
