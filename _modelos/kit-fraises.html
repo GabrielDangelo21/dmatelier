@@ -140,7 +140,10 @@
 
         <div class="commande">
           <p class="total-commande"><span>{{total_rotulo}}</span> <strong id="total-bas">{{kit_preco}}</strong></p>
-          <a class="btn" id="commander" href="https://wa.me/" target="_blank" rel="noopener">
+          <a class="btn" id="payer" href="#" rel="noopener">{{pagar_botao}}</a>
+          <p class="aide" id="payer-nota">{{pagar_nota}}</p>
+          <p class="aide aviso" id="payer-whats" hidden>{{pagar_whats}}</p>
+          <a class="btn clair" id="commander" href="https://wa.me/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z" stroke-linejoin="round"/></svg>
             {{org_botao}}
           </a>
@@ -151,6 +154,7 @@
           <dl>
             <dt>{{det_mat}}</dt><dd>{{det_mat_v}}</dd>
             <dt>{{det_uso}}</dt><dd>{{det_uso_v}}</dd>
+            <dt>{{det_liv}}</dt><dd>{{det_liv_v}}</dd>
             <dt>{{det_fab}}</dt><dd>{{det_fab_v}}</dd>
             <dt>{{det_ret}}</dt><dd>{{det_ret_v}}</dd>
           </dl>

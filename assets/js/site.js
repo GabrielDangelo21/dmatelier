@@ -4,6 +4,17 @@
 // VIDE tant que le numéro n'existe pas : WhatsApp demande alors à qui envoyer.
 const WHATSAPP = "32493733912"; // provisório: número do Gabriel até o WhatsApp Business da loja existir
 
+// Liens de paiement Stripe (Belgique, livraison DPD), un par combinaison d'options.
+// La clé : "p" = personnalisation (nom ou logo), "c" = couleurs des ongles.
+const STRIPE = {
+  "": "https://buy.stripe.com/4gMeV6fdd09Afdm0og0Fi00",
+  p: "https://buy.stripe.com/6oUfZa6GH7C2fdm5IA0Fi01",
+  c: "https://buy.stripe.com/8x25kwghhf4ufdmgne0Fi02",
+  pc: "https://buy.stripe.com/14AfZa8OP4pQ9T28UM0Fi03",
+};
+// Référence de commande lisible dans Stripe : lettres sans accent, chiffres, - et _ (200 max).
+const slug = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 // Prix (flyer DM Atelier, 25/11) : kit normal gravé Dayse Marques, puis les options.
 const PRIX = { kit: 119, perso: 20, couleurs: 10 };
 
@@ -180,7 +191,24 @@ if (form) {
       T.livraison,
       T.fin,
     ];
-    form.querySelector("#commander").href = waLien(lignes.join("\n"));
+    const whats = form.querySelector("#commander");
+    whats.href = waLien(lignes.join("\n"));
+
+    // Paiement en ligne : pas pour un logo (à valider avant) ni une autre couleur d'anneaux (à préciser).
+    const payer = form.querySelector("#payer");
+    if (payer) {
+      const parWhats = logoCharge || anneau.value === "Autre";
+      const ref = [
+        nom ? `nom-${slug(nom)}` : "",
+        `anneaux-${slug(anneau.value)}`,
+        ...Object.entries(couleursOngles).filter(([, c]) => c).map(([f, c]) => `${f}-${slug(c)}`),
+      ].filter(Boolean).join("_").slice(0, 200);
+      payer.href = `${STRIPE[(perso ? "p" : "") + (coul ? "c" : "")]}?client_reference_id=${ref}`;
+      payer.hidden = parWhats;
+      form.querySelector("#payer-nota").hidden = parWhats;
+      form.querySelector("#payer-whats").hidden = !parWhats;
+      whats.classList.toggle("clair", !parWhats);
+    }
     garderGravureDansLangues(nom);
   };
   form.addEventListener("input", maj);

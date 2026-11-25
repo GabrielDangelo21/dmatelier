@@ -286,7 +286,7 @@ legend, .config label.titre { font-weight: 500; font-size: var(--t-s); margin-bo
 .lien-btn { background: none; border: 0; padding: 0 .25rem; min-height: 44px; color: var(--charbon); font: inherit; font-size: var(--t-s); text-decoration: underline; text-underline-offset: .2em; cursor: pointer; }
 .logo-taille { display: grid; gap: .2rem; margin-top: .6rem; font-size: var(--t-s); }
 .logo-taille input { accent-color: var(--charbon); min-height: 44px; width: 100%; }
-.logo-taille[hidden], .lien-btn[hidden] { display: none; }
+.logo-taille[hidden], .lien-btn[hidden], .btn[hidden] { display: none; }
 
 /* Nuancier des ongles : un rond par couleur, le nom dans l'infobulle et pour les lecteurs d'écran */
 .nuancier { display: flex; flex-wrap: wrap; gap: .4rem; }
@@ -322,3 +322,5 @@ legend, .config label.titre { font-weight: 500; font-size: var(--t-s); margin-bo
 .total-commande { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--trait); padding-top: .9rem; }
 .total-commande strong { font: 500 1.6rem/1 var(--serif); }
 .vedette h3 { font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem); }
+.commande .aviso { color: var(--charbon); font-weight: 500; }
+.commande .btn + .aide { margin-top: -.2rem; }

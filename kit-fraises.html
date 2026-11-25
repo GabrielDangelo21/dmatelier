@@ -18,7 +18,7 @@
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<p class="apercu">Aperçu pour validation : délais de fabrication et frais de livraison encore à confirmer.</p>
+<p class="apercu">Aperçu pour validation : délais de fabrication encore à confirmer.</p>
 
 <header class="entete">
   <div class="wrap">
@@ -59,9 +59,9 @@
 
       <div class="config" id="config">
         <h1>Kit doigt de démonstration 3D</h1>
-        <p class="prix" id="prix" aria-live="polite" aria-label="Prix total">119 €</p>
+        <p class="prix" id="prix" aria-live="polite" aria-label="Prix total">119 €</p>
         <p class="prix-detail" id="prix-detail" hidden></p>
-        <p class="ttc">TVA non applicable (art. 56bis du Code de la TVA). Livraison en supplément, confirmée avant le paiement.</p>
+        <p class="ttc">TVA non applicable (art. 56bis du Code de la TVA). Livraison offerte dès 150 € en Belgique et dès 200 € en Europe.</p>
         <p class="resume">Un support pédagogique conçu pour faciliter les démonstrations techniques lors de vos formations.</p>
 
         <div class="contenu-kit">
@@ -84,11 +84,11 @@
         <fieldset>
           <label class="titre" for="gravure">Nom du salon à graver</label>
           <input class="champ" id="gravure" type="text" maxlength="16" placeholder="Votre salon" autocomplete="organization">
-          <p class="aide">16 caractères au maximum, gravés sur les embouts (et sur le support s&#x27;il n&#x27;y a pas de logo). Laissez vide pour le kit normal, gravé Dayse Marques. Votre nom ou votre logo : +20 €.</p>
+          <p class="aide">16 caractères au maximum, gravés sur les embouts (et sur le support s&#x27;il n&#x27;y a pas de logo). Laissez vide pour le kit normal, gravé Dayse Marques. Votre nom ou votre logo : +20 €.</p>
         </fieldset>
 
         <fieldset class="logo-client">
-          <legend>Votre logo sur le support (+20 €)</legend>
+          <legend>Votre logo sur le support (+20 €)</legend>
           <figure class="support-apercu" role="img" aria-label="Aperçu du support des embouts, face avant, avec votre logo ou le nom de votre salon gravé." style="background-image:url(assets/img/support-sans-logo.webp)">
             <div class="face"><canvas id="logo-canvas" aria-hidden="true"></canvas><span id="logo-nom" aria-hidden="true">Votre salon</span></div>
           </figure>
@@ -114,8 +114,8 @@
         </fieldset>
 
         <fieldset class="ongles-config">
-          <legend>Couleur de chaque ongle (+10 €)</legend>
-          <p class="aide">Le kit comprend les 4 formes, blanches par défaut. Pour d&#x27;autres couleurs, touchez un ongle puis choisissez sa teinte : +10 € pour le kit, quel que soit le nombre d&#x27;ongles colorés.</p>
+          <legend>Couleur de chaque ongle (+10 €)</legend>
+          <p class="aide">Le kit comprend les 4 formes, blanches par défaut. Pour d&#x27;autres couleurs, touchez un ongle puis choisissez sa teinte : +10 € pour le kit, quel que soit le nombre d&#x27;ongles colorés.</p>
           <div class="ongles-formes" role="radiogroup" aria-label="Ongle à colorer">
             <input type="radio" name="ongle-actif" id="f-amande" value="amande" data-nom="Amande" checked><label for="f-amande"><span class="ongle" id="ongle-amande" style="--img:url(/assets/img/ongles/amande.webp);--w:252;--h:562"></span><span class="nom">Amande</span><span class="teinte" id="teinte-amande">Blanc</span></label>
             <input type="radio" name="ongle-actif" id="f-carre-effile" value="carre-effile" data-nom="Carré effilé"><label for="f-carre-effile"><span class="ongle" id="ongle-carre-effile" style="--img:url(/assets/img/ongles/carre-effile.webp);--w:255;--h:577"></span><span class="nom">Carré effilé</span><span class="teinte" id="teinte-carre-effile">Blanc</span></label>
@@ -139,18 +139,22 @@
         </fieldset>
 
         <div class="commande">
-          <p class="total-commande"><span>Total</span> <strong id="total-bas">119 €</strong></p>
-          <a class="btn" id="commander" href="https://wa.me/" target="_blank" rel="noopener">
+          <p class="total-commande"><span>Total</span> <strong id="total-bas">119 €</strong></p>
+          <a class="btn" id="payer" href="#" rel="noopener">Payer en ligne</a>
+          <p class="aide" id="payer-nota">Paiement sécurisé Stripe, livraison en Belgique. Vos choix sont transmis avec la commande.</p>
+          <p class="aide aviso" id="payer-whats" hidden>Pour un logo, une autre couleur d&#x27;anneaux ou une livraison hors de Belgique, commandez sur WhatsApp : nous validons avec vous avant le paiement.</p>
+          <a class="btn clair" id="commander" href="https://wa.me/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z" stroke-linejoin="round"/></svg>
             Commander sur WhatsApp
           </a>
-          <p class="aide">Le message est prêt avec vos choix et le total. Vous recevez ensuite les frais de livraison, le délai et le lien de paiement.</p>
+          <p class="aide">Sur WhatsApp, le message est prêt avec vos choix et le total. Vous recevez ensuite les frais de livraison, le délai et le lien de paiement.</p>
         </div>
 
         <div class="details-produit">
           <dl>
             <dt>Matière</dt><dd>Plastique PLA imprimé en 3D</dd>
             <dt>Usage</dt><dd>Démonstration en formation, pas pour la ponceuse</dd>
+            <dt>Livraison</dt><dd>Belgique (DPD) : 5 € en point relais, 7 € à domicile. Europe : sur WhatsApp. Offerte dès 150 € (Belgique) et 200 € (Europe).</dd>
             <dt>Fabrication</dt><dd>Délai confirmé sur WhatsApp avant le paiement</dd>
             <dt>Retour</dt><dd>Kit gravé non retournable, sauf défaut</dd>
           </dl>
