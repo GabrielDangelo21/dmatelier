@@ -59,7 +59,8 @@
 
       <div class="config" id="config">
         <h1>{{produto_nome}}</h1>
-        <p class="prix">{{kit_preco}}</p>
+        <p class="prix" id="prix" aria-live="polite" aria-label="{{kit_precos_aria}}">{{kit_preco}}</p>
+        <p class="prix-detail" id="prix-detail" hidden></p>
         <p class="ttc">{{kit_ttc}}</p>
         <p class="resume">{{kit_resumo}}</p>
 
@@ -138,6 +139,7 @@
         </fieldset>
 
         <div class="commande">
+          <p class="total-commande"><span>{{total_rotulo}}</span> <strong id="total-bas">{{kit_preco}}</strong></p>
           <a class="btn" id="commander" href="https://wa.me/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z" stroke-linejoin="round"/></svg>
             {{org_botao}}

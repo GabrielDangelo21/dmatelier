@@ -316,3 +316,7 @@ legend, .config label.titre { font-weight: 500; font-size: var(--t-s); margin-bo
 .ongles-formes .teinte { font-size: .75rem; color: var(--charbon-doux); line-height: 1.2; }
 .ongle-etape { margin: 1.1rem 0 .5rem; font-size: var(--t-s); font-weight: 500; }
 .nuancier label.standard span:first-child { background: #fbfaf7; }
+
+.prix-detail { font-size: var(--t-s); color: var(--charbon-doux); margin-top: .2rem; }
+.total-commande { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--trait); padding-top: .9rem; }
+.total-commande strong { font: 500 1.6rem/1 var(--serif); }

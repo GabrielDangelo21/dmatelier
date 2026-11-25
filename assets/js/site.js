@@ -4,6 +4,9 @@
 // VIDE tant que le numéro n'existe pas : WhatsApp demande alors à qui envoyer.
 const WHATSAPP = "32493733912"; // provisório: número do Gabriel até o WhatsApp Business da loja existir
 
+// Prix (flyer DM Atelier, 25/11) : kit normal gravé Dayse Marques, puis les options.
+const PRIX = { kit: 119, perso: 20, couleurs: 10 };
+
 // Textes du message WhatsApp, dans la langue de la page (<html lang>).
 // Les noms des options traduits viennent des data-label du HTML.
 const TEXTES = {
@@ -12,13 +15,16 @@ const TEXTES = {
     question: "Bonjour DM Atelier, j'ai une question : ",
     bonjour: "Bonjour DM Atelier ! Je souhaite commander :",
     produit: "Kit doigt de démonstration 3D (doigt 20 cm, 4 ongles, 6 embouts et support, 2 limes)",
-    ongles: "Ongles en couleur (supplément)",
+    ongles: "Ongles en couleur",
     logo: "Logo sur le support : je joins le fichier à ce message.",
-    gravure: (nom) => `Gravure : « ${nom} »`,
-    sansGravure: "Sans nom de salon",
+    gravure: (nom) => `Gravure « ${nom} »`,
+    sansGravure: "Kit normal, gravé Dayse Marques",
+    perso: "Personnalisation (nom ou logo)",
+    total: "Total affiché",
+    kit: "Kit",
     anneaux: "Anneaux",
     autre: "autre couleur, à préciser : ",
-    fin: "Merci de m'indiquer le prix et le délai.",
+    fin: "Merci de m'indiquer les frais de livraison et le délai.",
     livraison: "Livraison vers (pays et code postal) : ",
   },
   nl: {
@@ -149,13 +155,28 @@ if (form) {
     const ongles = Object.entries(couleursOngles).filter(([, c]) => c).map(([f, c]) => `${nomsOngles[f]} en ${c.toLowerCase()}`).join(", ");
     const anneau = choisi("anneaux");
     const couleur = anneau.value === "Autre" ? T.autre : anneau.dataset.label.toLowerCase();
+    const perso = !!(nom || logoCharge), coul = !!ongles;
+    const total = PRIX.kit + (perso ? PRIX.perso : 0) + (coul ? PRIX.couleurs : 0);
+    const eur = (n) => `${n} €`; // espace insécable : « 20 € » ne se coupe pas
+    const prix = form.querySelector("#prix"), detail = form.querySelector("#prix-detail");
+    if (prix) {
+      prix.textContent = eur(total);
+      const bas = form.querySelector("#total-bas"); if (bas) bas.textContent = eur(total);
+      const parts = [`${T.kit || "Kit"} ${eur(PRIX.kit)}`];
+      if (perso) parts.push(`${(T.perso || "").toLowerCase()} +${eur(PRIX.perso)}`);
+      if (coul) parts.push(`${(T.ongles || "").toLowerCase()} +${eur(PRIX.couleurs)}`);
+      detail.textContent = parts.join(", ");
+      detail.hidden = parts.length === 1;
+    }
     const lignes = [
       T.bonjour,
-      T.produit,
+      `${T.produit}${T.sep}${eur(PRIX.kit)}`,
       nom ? T.gravure(nom) : T.sansGravure,
+      ...(perso && T.perso ? [`${T.perso}${T.sep}+${eur(PRIX.perso)}`] : []),
       `${T.anneaux}${T.sep}${couleur}`,
-      ...(ongles && T.ongles ? [`${T.ongles}${T.sep}${ongles}`] : []),
+      ...(coul && T.ongles ? [`${T.ongles} (+${eur(PRIX.couleurs)})${T.sep}${ongles}`] : []),
       ...(logoCharge && T.logo ? [T.logo] : []),
+      ...(T.total ? [`${T.total}${T.sep}${eur(total)}`] : []),
       T.livraison,
       T.fin,
     ];
@@ -193,7 +214,7 @@ if (form) {
     const taille = form.querySelector("#logo-taille");
     const blocTaille = form.querySelector(".logo-taille");
     const face = form.querySelector(".support-apercu .face");
-    const defaut = nomGrave.textContent;
+    const defaut = "Dayse Marques";
     const afficher = () => {
       canvas.hidden = !logoCharge; nomGrave.hidden = logoCharge;
       retirer.hidden = !logoCharge; blocTaille.hidden = !logoCharge;
