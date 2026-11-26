@@ -1,0 +1,49 @@
+{
+  "_nota": "Acessórios do site. Só dados públicos (preço de venda da loja). Custos e preço para a Dayse ficam na planilha particular.",
+  "acessorios": [
+    {
+      "id": "porte-cotons",
+      "nome": "Porte-cotons et cotons-tiges",
+      "medidas": "environ 11 × 8,5 × 7 cm",
+      "fotos": [
+        "porte-cotons-1.webp",
+        "porte-cotons-3.webp",
+        "porte-cotons-6.webp"
+      ],
+      "pendente": "cores; nome gravado na faixa",
+      "preco": 12
+    },
+    {
+      "id": "porte-pinceaux",
+      "nome": "Porte-pinceaux",
+      "medidas": "environ 16 × 10 × 9 cm",
+      "fotos": [],
+      "pendente": "fotos da peça impressa; cores; nome gravado",
+      "preco": 15
+    },
+    {
+      "id": "jeton-caddie",
+      "nome": "Jetons de caddie porte-clés, lot de 30",
+      "medidas": "disque de la taille d'une pièce de 1 €",
+      "formas": [
+        "ovale",
+        "goutte",
+        "étiquette"
+      ],
+      "fotos": [
+        "jeton-caddie-1.webp",
+        "jeton-caddie-8.webp",
+        "jeton-caddie-9.webp",
+        "jeton-caddie-11.webp"
+      ],
+      "pendente": "cores; nome/logo da cliente",
+      "variantes": [
+        {
+          "id": "avec-anneau",
+          "nome": "Avec anneau et sachet individuel",
+          "preco": 30
+        }
+      ]
+    }
+  ]
+}

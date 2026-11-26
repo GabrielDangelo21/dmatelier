@@ -4,17 +4,6 @@
 // VIDE tant que le numéro n'existe pas : WhatsApp demande alors à qui envoyer.
 const WHATSAPP = "32493733912"; // provisório: número do Gabriel até o WhatsApp Business da loja existir
 
-// Liens de paiement Stripe (Belgique, livraison DPD), un par combinaison d'options.
-// La clé : "p" = personnalisation (nom ou logo), "c" = couleurs des ongles.
-const STRIPE = {
-  "": "https://buy.stripe.com/4gMeV6fdd09Afdm0og0Fi00",
-  p: "https://buy.stripe.com/6oUfZa6GH7C2fdm5IA0Fi01",
-  c: "https://buy.stripe.com/8x25kwghhf4ufdmgne0Fi02",
-  pc: "https://buy.stripe.com/14AfZa8OP4pQ9T28UM0Fi03",
-};
-// Référence de commande lisible dans Stripe : lettres sans accent, chiffres, - et _ (200 max).
-const slug = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-
 // Prix (flyer DM Atelier, 25/11) : kit normal gravé Dayse Marques, puis les options.
 const PRIX = { kit: 119, perso: 20, couleurs: 10 };
 
@@ -198,12 +187,6 @@ if (form) {
     const payer = form.querySelector("#payer");
     if (payer) {
       const parWhats = logoCharge || anneau.value === "Autre";
-      const ref = [
-        nom ? `nom-${slug(nom)}` : "",
-        `anneaux-${slug(anneau.value)}`,
-        ...Object.entries(couleursOngles).filter(([, c]) => c).map(([f, c]) => `${f}-${slug(c)}`),
-      ].filter(Boolean).join("_").slice(0, 200);
-      payer.href = `${STRIPE[(perso ? "p" : "") + (coul ? "c" : "")]}?client_reference_id=${ref}`;
       payer.hidden = parWhats;
       form.querySelector("#payer-nota").hidden = parWhats;
       form.querySelector("#payer-whats").hidden = !parWhats;
@@ -213,6 +196,20 @@ if (form) {
   };
   form.addEventListener("input", maj);
   form.addEventListener("change", maj);
+
+  // « Ajouter au panier » : le kit part avec ses choix (nom, anneaux, couleur de chaque ongle).
+  const ajouterKit = form.querySelector("#payer");
+  if (ajouterKit) {
+    // panier.js est chargé après ce fichier : on cherche Panier au moment du clic.
+    ajouterKit.addEventListener("click", () => {
+      if (typeof Panier === "undefined") return;
+      const ongles = Object.fromEntries(Object.entries(couleursOngles).filter(([, c]) => c));
+      Panier.ajouter({ type: "kit", qte: 1, opts: { nom: champ.value.trim(), anneaux: "Rouge", ongles } });
+      const ok = form.querySelector("#kit-ajoute");
+      ok.hidden = false;
+      ok.focus();
+    });
+  }
 
   // Forme + couleur : on choisit un ongle, puis sa couleur. Chaque ongle garde la sienne.
   form.querySelectorAll('input[name="ongle-actif"]').forEach((i) => { nomsOngles[i.value] = i.dataset.nom; couleursOngles[i.value] = ""; });

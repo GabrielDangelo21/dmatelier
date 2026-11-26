@@ -13,7 +13,7 @@ RAIZ = Path(__file__).parent
 # Por enquanto só francês (decisão de 19/11). Para publicar os outros idiomas,
 # volte para ["fr", "nl", "de", "en"]: os textos estão em _textos/ (desatualizados a partir daqui).
 IDIOMAS = ["fr"]  # o primeiro fica na raiz
-PAGINAS = ["index.html", "kit-fraises.html", "legal.html"]
+PAGINAS = ["index.html", "kit-fraises.html", "accessoires.html", "panier.html", "merci.html", "legal.html"]
 CHAVE = re.compile(r"\{\{(\w+)\}\}")
 
 

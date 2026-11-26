@@ -29,7 +29,9 @@
     <nav class="nav" aria-label="{{nav_aria}}">
       <a class="lien" href="index.html#collection">{{nav_colecao}}</a>
       <a class="lien" href="index.html#questions">{{nav_perguntas}}</a>
-      <a class="wa" href="https://wa.me/" data-wa-question>WhatsApp</a>
+      <a class="lien" href="accessoires.html">{{nav_acessorios}}</a>
+      <a class="wa" href="https://wa.me/" data-wa-question aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z" stroke-linejoin="round"/></svg><span>WhatsApp</span></a>
+      <a class="panier-lien" href="panier.html" data-aria="{{panier_aria}}" aria-label="{{panier_aria_0}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="nb" data-panier-nb hidden>0</span></a>
       {{langues}}
     </nav>
   </div>
@@ -140,7 +142,8 @@
 
         <div class="commande">
           <p class="total-commande"><span>{{total_rotulo}}</span> <strong id="total-bas">{{kit_preco}}</strong></p>
-          <a class="btn" id="payer" href="#" rel="noopener">{{pagar_botao}}</a>
+          <button class="btn" type="button" id="payer">{{pagar_botao}}</button>
+          <p class="ajoute" id="kit-ajoute" tabindex="-1" hidden>{{acc_ajoute}} <a href="panier.html">{{acc_ver_panier}}</a> <a href="accessoires.html">{{kit_ver_acc}}</a></p>
           <p class="aide" id="payer-nota">{{pagar_nota}}</p>
           <p class="aide aviso" id="payer-whats" hidden>{{pagar_whats}}</p>
           <a class="btn clair" id="commander" href="https://wa.me/" target="_blank" rel="noopener">
@@ -171,6 +174,7 @@
       <p style="margin-top:1rem">{{rodape_empresa}}<br>{{rodape_endereco}}</p>
     </div>
     <ul>
+      <li><a href="accessoires.html">{{nav_acessorios}}</a></li>
       <li><a href="index.html#collection">{{nav_colecao}}</a></li>
       <li><a href="index.html#questions">{{nav_perguntas}}</a></li>
       <li><a href="https://wa.me/" data-wa-question>WhatsApp</a></li>
@@ -183,5 +187,6 @@
   </div>
 </footer>
 <script src="{{r}}assets/js/site.js"></script>
+<script src="{{r}}assets/js/panier.js"></script>
 </body>
 </html>

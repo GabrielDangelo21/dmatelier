@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="{{lang}}" data-type="product">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{acc_titulo}}</title>
+<meta name="description" content="{{acc_desc}}">
+<meta name="site-kind" content="product">
+<meta name="theme-color" content="#f5ede1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DM Atelier">
+<meta property="og:title" content="{{acc_titulo}}">
+<meta property="og:description" content="{{acc_desc}}">
+<meta name="twitter:card" content="summary">
+{{hreflang}}
+<link rel="stylesheet" href="{{r}}assets/css/site.css">
+<link rel="icon" href="{{r}}assets/logo/dm-monogramme.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#contenu">{{skip}}</a>
+<p class="apercu">{{apercu}}</p>
+
+<header class="entete">
+  <div class="wrap">
+    <a class="marque" href="index.html" aria-label="{{marque_aria}}">
+      <img src="{{r}}assets/logo/dm-monogramme.svg" alt="" width="82" height="104">
+      <span><b>DM ATELIER</b><small>by Dayse Marques</small></span>
+    </a>
+    <nav class="nav" aria-label="{{nav_aria}}">
+      <a class="lien" href="index.html#collection">{{nav_colecao}}</a>
+      <a class="lien" href="index.html#questions">{{nav_perguntas}}</a>
+      <a class="lien" href="accessoires.html">{{nav_acessorios}}</a>
+      <a class="wa" href="https://wa.me/" data-wa-question aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z" stroke-linejoin="round"/></svg><span>WhatsApp</span></a>
+      <a class="panier-lien" href="panier.html" data-aria="{{panier_aria}}" aria-label="{{panier_aria_0}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="nb" data-panier-nb hidden>0</span></a>
+      {{langues}}
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="acessorios">
+    <div class="wrap">
+      <div class="intro-section">
+        <h1>{{acc_h1}}</h1>
+        <p>{{acc_intro}}</p>
+      </div>
+
+      <div class="grade-acc">
+        <form class="acc" data-accessoire="porte-cotons">
+          <div class="acc-fotos">
+            <img src="{{r}}assets/img/accessoires/porte-cotons-1.webp" width="900" height="1125" alt="{{acc_cotons_alt1}}" loading="lazy">
+            <img src="{{r}}assets/img/accessoires/porte-cotons-6.webp" width="900" height="1125" alt="{{acc_cotons_alt2}}" loading="lazy">
+          </div>
+          <h2>{{acc_cotons_nome}}</h2>
+          <p class="acc-prix">12&nbsp;€</p>
+          <p class="acc-desc">{{acc_cotons_desc}}</p>
+          <p class="aide">{{acc_cotons_medidas}}</p>
+          <button class="btn" type="submit">{{acc_ajouter}}</button>
+          <p class="ajoute" tabindex="-1" hidden>{{acc_ajoute}} <a href="panier.html">{{acc_ver_panier}}</a></p>
+        </form>
+
+        <form class="acc" data-accessoire="jetons">
+          <div class="acc-fotos">
+            <img src="{{r}}assets/img/accessoires/jeton-caddie-1.webp" width="900" height="1125" alt="{{acc_jetons_alt1}}" loading="lazy">
+            <img src="{{r}}assets/img/accessoires/jeton-caddie-8.webp" width="900" height="1125" alt="{{acc_jetons_alt2}}" loading="lazy">
+          </div>
+          <h2>{{acc_jetons_nome}}</h2>
+          <p class="acc-prix">30&nbsp;€ <small>{{acc_jetons_lot}}</small></p>
+          <p class="acc-desc">{{acc_jetons_desc}}</p>
+          <fieldset>
+            <legend>{{acc_forma}}</legend>
+            <div class="choix">
+              <input type="radio" name="forme" id="j-ovale" value="ovale" checked><label for="j-ovale">{{acc_ovale}}</label>
+              <input type="radio" name="forme" id="j-goutte" value="goutte"><label for="j-goutte">{{acc_goutte}}</label>
+              <input type="radio" name="forme" id="j-etiquette" value="etiquette"><label for="j-etiquette">{{acc_etiquette}}</label>
+            </div>
+          </fieldset>
+          <input type="hidden" name="variante" value="avec-anneau">
+          <button class="btn" type="submit">{{acc_ajouter}}</button>
+          <p class="ajoute" tabindex="-1" hidden>{{acc_ajoute}} <a href="panier.html">{{acc_ver_panier}}</a></p>
+        </form>
+      </div>
+
+      <p class="acc-nota">{{acc_nota_frete}}</p>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div>
+      <a class="marque" href="index.html" aria-label="{{marque_aria}}"><img src="{{r}}assets/logo/dm-monogramme.svg" alt="" width="82" height="104"><span><b>DM ATELIER</b><small>by Dayse Marques, Professional Collection</small></span></a>
+      <p style="margin-top:1rem">{{rodape_empresa}}<br>{{rodape_endereco}}</p>
+    </div>
+    <ul>
+      <li><a href="accessoires.html">{{nav_acessorios}}</a></li>
+      <li><a href="index.html#collection">{{nav_colecao}}</a></li>
+      <li><a href="index.html#questions">{{nav_perguntas}}</a></li>
+      <li><a href="https://wa.me/" data-wa-question>WhatsApp</a></li>
+    </ul>
+    <ul>
+      <li><a href="legal.html#mentions">{{leg_mencoes}}</a></li>
+      <li><a href="legal.html#conditions">{{leg_condicoes}}</a></li>
+      <li><a href="legal.html#confidentialite">{{leg_privacidade}}</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="{{r}}assets/js/site.js"></script>
+<script src="{{r}}assets/js/panier.js"></script>
+</body>
+</html>

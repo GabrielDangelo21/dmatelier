@@ -31,7 +31,9 @@
       <a class="lien" href="#collection">{{nav_colecao}}</a>
       <a class="lien" href="#commander">{{nav_pedir}}</a>
       <a class="lien" href="#questions">{{nav_perguntas}}</a>
-      <a class="wa" href="https://wa.me/" data-wa-question>WhatsApp</a>
+      <a class="lien" href="accessoires.html">{{nav_acessorios}}</a>
+      <a class="wa" href="https://wa.me/" data-wa-question aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z" stroke-linejoin="round"/></svg><span>WhatsApp</span></a>
+      <a class="panier-lien" href="panier.html" data-aria="{{panier_aria}}" aria-label="{{panier_aria_0}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="nb" data-panier-nb hidden>0</span></a>
       {{langues}}
     </nav>
   </div>
@@ -83,6 +85,16 @@
           <a class="btn" href="kit-fraises.html">{{cta_personalizar}}</a>
         </div>
       </article>
+
+      <div class="acc-teaser">
+        <div>
+          <h3>{{idx_acc_h3}}</h3>
+          <p>{{idx_acc_p}}</p>
+        </div>
+        <a class="acc-teaser-item" href="accessoires.html"><img src="{{r}}assets/img/accessoires/porte-cotons-1.webp" width="900" height="1125" alt="" loading="lazy"><span>{{acc_cotons_nome}}<b>12&nbsp;€</b></span></a>
+        <a class="acc-teaser-item" href="accessoires.html"><img src="{{r}}assets/img/accessoires/jeton-caddie-1.webp" width="900" height="1125" alt="" loading="lazy"><span>{{acc_jetons_nome}}<b>{{idx_acc_jetons_prix}}</b></span></a>
+        <a class="btn clair" href="accessoires.html">{{pan_ver_acc}}</a>
+      </div>
     </div>
   </section>
 
@@ -139,6 +151,7 @@
       <p style="margin-top:1rem">{{rodape_empresa}}<br>{{rodape_endereco}}</p>
     </div>
     <ul>
+      <li><a href="accessoires.html">{{nav_acessorios}}</a></li>
       <li><a href="#collection">{{nav_colecao}}</a></li>
       <li><a href="#commander">{{nav_pedir}}</a></li>
       <li><a href="https://wa.me/" data-wa-question>WhatsApp</a></li>
@@ -152,5 +165,6 @@
   </div>
 </footer>
 <script src="{{r}}assets/js/site.js"></script>
+<script src="{{r}}assets/js/panier.js"></script>
 </body>
 </html>

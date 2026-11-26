@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="{{lang}}" data-type="product">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{pan_titulo}}</title>
+<meta name="description" content="{{pan_desc}}">
+<meta name="site-kind" content="product">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f5ede1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DM Atelier">
+<meta property="og:title" content="{{pan_titulo}}">
+<meta property="og:description" content="{{pan_desc}}">
+<meta name="twitter:card" content="summary">
+{{hreflang}}
+<link rel="stylesheet" href="{{r}}assets/css/site.css">
+<link rel="icon" href="{{r}}assets/logo/dm-monogramme.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#contenu">{{skip}}</a>
+<p class="apercu">{{apercu}}</p>
+
+<header class="entete">
+  <div class="wrap">
+    <a class="marque" href="index.html" aria-label="{{marque_aria}}">
+      <img src="{{r}}assets/logo/dm-monogramme.svg" alt="" width="82" height="104">
+      <span><b>DM ATELIER</b><small>by Dayse Marques</small></span>
+    </a>
+    <nav class="nav" aria-label="{{nav_aria}}">
+      <a class="lien" href="index.html#collection">{{nav_colecao}}</a>
+      <a class="lien" href="index.html#questions">{{nav_perguntas}}</a>
+      <a class="lien" href="accessoires.html">{{nav_acessorios}}</a>
+      <a class="wa" href="https://wa.me/" data-wa-question aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z" stroke-linejoin="round"/></svg><span>WhatsApp</span></a>
+      <a class="panier-lien" href="panier.html" data-aria="{{panier_aria}}" aria-label="{{panier_aria_0}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="nb" data-panier-nb hidden>0</span></a>
+      {{langues}}
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="panier-page">
+    <div class="wrap" id="panier" data-qte="{{pan_qte}}" data-moins="{{pan_moins}}" data-plus="{{pan_plus}}" data-retirer="{{pan_retirer}}"
+         data-manque="{{pan_manque}}" data-offerte="{{pan_offerte}}" data-cout="{{pan_cout}}" data-cout-offerte="{{pan_cout_offerte}}"
+         data-payer="{{pan_payer}}" data-attente="{{pan_attente}}">
+      <h1>{{pan_h1}}</h1>
+
+      <div id="panier-vide" hidden>
+        <p>{{pan_vazio}}</p>
+        <div class="actions">
+          <a class="btn" href="kit-fraises.html">{{pan_ver_kit}}</a>
+          <a class="btn clair" href="accessoires.html">{{pan_ver_acc}}</a>
+        </div>
+      </div>
+
+      <div class="panier-grille">
+        <ul class="panier-liste" id="panier-liste"></ul>
+
+        <aside class="panier-resume" id="panier-resume" hidden>
+          <p class="resume-ligne"><span>{{pan_subtotal}}</span> <strong id="sous-total">0&nbsp;€</strong></p>
+          <div class="livraison-barre" id="livraison-barre" aria-hidden="true"><span></span></div>
+          <p class="aide" id="livraison-msg"></p>
+          <p class="aide" id="livraison-cout"></p>
+          <button class="btn" type="button" id="panier-payer">{{pan_payer}}</button>
+          <p class="aide">{{pan_payer_nota}}</p>
+          <p class="aide aviso" id="panier-erreur" role="alert" hidden>{{pan_erro}}</p>
+          <a class="btn clair" id="panier-whatsapp" href="https://wa.me/" target="_blank" rel="noopener">{{pan_whatsapp}}</a>
+          <p class="aide">{{pan_whatsapp_nota}}</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div>
+      <a class="marque" href="index.html" aria-label="{{marque_aria}}"><img src="{{r}}assets/logo/dm-monogramme.svg" alt="" width="82" height="104"><span><b>DM ATELIER</b><small>by Dayse Marques, Professional Collection</small></span></a>
+      <p style="margin-top:1rem">{{rodape_empresa}}<br>{{rodape_endereco}}</p>
+    </div>
+    <ul>
+      <li><a href="accessoires.html">{{nav_acessorios}}</a></li>
+      <li><a href="index.html#collection">{{nav_colecao}}</a></li>
+      <li><a href="index.html#questions">{{nav_perguntas}}</a></li>
+      <li><a href="https://wa.me/" data-wa-question>WhatsApp</a></li>
+    </ul>
+    <ul>
+      <li><a href="legal.html#mentions">{{leg_mencoes}}</a></li>
+      <li><a href="legal.html#conditions">{{leg_condicoes}}</a></li>
+      <li><a href="legal.html#confidentialite">{{leg_privacidade}}</a></li>
+    </ul>
+  </div>
+</footer>
+<script src="{{r}}assets/js/site.js"></script>
+<script src="{{r}}assets/js/panier.js"></script>
+</body>
+</html>
