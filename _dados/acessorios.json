@@ -17,8 +17,11 @@
       "id": "porte-pinceaux",
       "nome": "Porte-pinceaux",
       "medidas": "environ 16 × 10 × 9 cm",
-      "fotos": [],
-      "pendente": "fotos da peça impressa; cores; nome gravado",
+      "fotos": [
+        "porte-pinceaux-3.webp",
+        "porte-pinceaux-8.webp"
+      ],
+      "pendente": "cores; nome gravado",
       "preco": 15
     },
     {

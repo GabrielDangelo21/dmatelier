@@ -11,7 +11,7 @@ const CATALOGUE = {
     variantes: { "avec-anneau": { nom: "avec anneau et sachet individuel", prix: 30 } },
     formes: { ovale: "ovale", goutte: "goutte", etiquette: "étiquette" },
   },
-  // Porte-pinceaux (15 €) : à ajouter quand les photos seront prêtes.
+  "porte-pinceaux": { nom: "Porte-pinceaux", prix: 15, img: "assets/img/accessoires/porte-pinceaux-3.webp" },
 };
 const LIVRAISON_OFFERTE = 150; // Belgique
 const NOMS_ONGLES = { amande: "Amande", "carre-effile": "Carré effilé", naturelle: "Naturelle", squoval: "Squoval" };

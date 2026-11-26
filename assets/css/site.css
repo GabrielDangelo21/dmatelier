@@ -396,5 +396,8 @@ legend, .config label.titre { font-weight: 500; font-size: var(--t-s); margin-bo
 .acc-teaser-item b { font: 500 1.3rem var(--serif); }
 .acc-teaser-item:hover span { text-decoration: underline; }
 .acc-teaser .btn { justify-self: start; }
-@media (min-width: 720px) { .acc-teaser { grid-template-columns: 1.4fr 1fr 1fr auto; } }
-@media (max-width: 719px) { .acc-teaser { grid-template-columns: 1fr 1fr; } .acc-teaser > div, .acc-teaser .btn { grid-column: 1 / -1; } }
+@media (min-width: 720px) { .acc-teaser { grid-template-columns: 1.4fr 1fr 1fr 1fr auto; } }
+@media (max-width: 719px) { .acc-teaser { grid-template-columns: 1fr 1fr 1fr; gap: .7rem; } .acc-teaser > div, .acc-teaser .btn { grid-column: 1 / -1; } }
+@media (min-width: 1100px) { .grade-acc { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+.acc-teaser-item { align-self: start; }
+@media (max-width: 719px) { .acc-teaser-item span { font-size: var(--t-xs); } .acc-teaser-item b { font-size: 1.1rem; } }

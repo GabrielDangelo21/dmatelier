@@ -201,5 +201,10 @@
   "acc_ajoute": "Ajouté au panier.",
   "acc_ajouter": "Ajouter au panier",
   "kit_ver_acc": "Voir les accessoires",
-  "idx_acc_jetons_prix": "30 € le lot de 30"
+  "idx_acc_jetons_prix": "30 € le lot de 30",
+  "acc_pinceaux_nome": "Porte-pinceaux",
+  "acc_pinceaux_desc": "Un pot ovale cannelé à deux compartiments pour ranger pinceaux et limes debout, avec une bague marron gravée.",
+  "acc_pinceaux_medidas": "Environ 16 × 10 × 9 cm.",
+  "acc_pinceaux_alt1": "Porte-pinceaux ovale couleur sable avec des pinceaux de maquillage, bague marron gravée.",
+  "acc_pinceaux_alt2": "Porte-pinceaux vide vu de dessus, avec ses deux compartiments."
 }
